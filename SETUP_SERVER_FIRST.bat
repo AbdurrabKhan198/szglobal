@@ -40,27 +40,32 @@ ssh %SERVER_USER%@%SERVER_IP% "rm -rf %SERVER_PATH% && git clone %GITHUB_REPO% %
 echo [5/7] Setting up Python virtual environment...
 ssh %SERVER_USER%@%SERVER_IP% "cd %SERVER_PATH% && python3 -m venv venv && source venv/bin/activate && pip install --upgrade pip && pip install -r requirements.txt"
 
-echo [6/7] Creating necessary directories...
+echo [6/8] Creating necessary directories...
 ssh %SERVER_USER%@%SERVER_IP% "mkdir -p /var/log/gunicorn && mkdir -p /var/run/gunicorn && mkdir -p %SERVER_PATH%/logs && mkdir -p %SERVER_PATH%/staticfiles && mkdir -p %SERVER_PATH%/media && chown -R www-data:www-data /var/log/gunicorn && chown -R www-data:www-data /var/run/gunicorn"
 
-echo [7/7] Configuring Nginx and Systemd...
+echo [7/8] Configuring Nginx, Gunicorn, and Webhook...
 ssh %SERVER_USER%@%SERVER_IP% "cp %SERVER_PATH%/deployment/nginx_szglobal.conf /etc/nginx/sites-available/szglobal && ln -sf /etc/nginx/sites-available/szglobal /etc/nginx/sites-enabled/ && rm -f /etc/nginx/sites-enabled/default && nginx -t"
-ssh %SERVER_USER%@%SERVER_IP% "cp %SERVER_PATH%/deployment/szglobal.service /etc/systemd/system/ && systemctl daemon-reload && systemctl enable szglobal"
+ssh %SERVER_USER%@%SERVER_IP% "cp %SERVER_PATH%/deployment/szglobal.service /etc/systemd/system/ && cp %SERVER_PATH%/deployment/szglobal-webhook.service /etc/systemd/system/ && systemctl daemon-reload && systemctl enable szglobal && systemctl enable szglobal-webhook"
 
 echo.
-echo [FINAL] Running initial deployment...
-ssh %SERVER_USER%@%SERVER_IP% "cd %SERVER_PATH% && source venv/bin/activate && DJANGO_SETTINGS_MODULE=szglobal.settings_production python manage.py collectstatic --noinput && DJANGO_SETTINGS_MODULE=szglobal.settings_production python manage.py migrate --noinput && chown -R www-data:www-data %SERVER_PATH% && systemctl start szglobal && systemctl restart nginx"
+echo [8/8] Running initial deployment and starting services...
+ssh %SERVER_USER%@%SERVER_IP% "cd %SERVER_PATH% && source venv/bin/activate && DJANGO_SETTINGS_MODULE=szglobal.settings_production python manage.py collectstatic --noinput && DJANGO_SETTINGS_MODULE=szglobal.settings_production python manage.py migrate --noinput && chown -R www-data:www-data %SERVER_PATH% && systemctl start szglobal && systemctl start szglobal-webhook && systemctl restart nginx && ufw allow 9000/tcp"
 
 echo.
 echo ==========================================
 echo   SERVER SETUP COMPLETE!
 echo ==========================================
 echo.
-echo Your website should now be live at:
+echo Your website is now live at:
 echo   http://68.183.92.148
 echo   http://szglobalarabia.com
 echo.
-echo For future deployments, just use:
-echo   DEPLOY_ONE_CLICK.bat
+echo ==========================================
+echo   ONE-CLICK DEPLOY URL (BOOKMARK THIS!):
+echo   http://68.183.92.148:9000/deploy?key=szglobal2024
+echo ==========================================
+echo.
+echo Just visit the URL above to deploy anytime!
+echo No need to use command line anymore.
 echo.
 pause

@@ -71,8 +71,10 @@ nginx -t
 
 echo -e "${YELLOW}[9/10] Setting up systemd service...${NC}"
 cp $SERVER_PATH/deployment/szglobal.service /etc/systemd/system/
+cp $SERVER_PATH/deployment/szglobal-webhook.service /etc/systemd/system/
 systemctl daemon-reload
 systemctl enable szglobal
+systemctl enable szglobal-webhook
 
 echo -e "${YELLOW}[10/10] Running initial deployment...${NC}"
 source venv/bin/activate
@@ -83,7 +85,11 @@ chown -R www-data:www-data $SERVER_PATH
 
 echo -e "${YELLOW}Starting services...${NC}"
 systemctl start szglobal
+systemctl start szglobal-webhook
 systemctl restart nginx
+
+# Open port 9000 for webhook
+ufw allow 9000/tcp
 
 echo ""
 echo -e "${GREEN}=========================================="
@@ -94,13 +100,10 @@ echo "Your website is now live at:"
 echo "  - http://68.183.92.148"
 echo "  - http://szglobalarabia.com"
 echo ""
-echo "To update the website, run on your local machine:"
-echo "  DEPLOY_ONE_CLICK.bat"
+echo -e "${GREEN}ONE-CLICK DEPLOY URL:${NC}"
+echo "  http://68.183.92.148:9000/deploy?key=szglobal2024"
 echo ""
-echo "Or manually on the server:"
-echo "  cd $SERVER_PATH && git pull && source venv/bin/activate"
-echo "  python manage.py collectstatic --noinput"
-echo "  systemctl restart szglobal"
+echo "Bookmark this URL! Just visit it to deploy latest code from GitHub."
 echo ""
 echo "To install SSL (recommended):"
 echo "  apt install certbot python3-certbot-nginx"

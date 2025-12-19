@@ -1,0 +1,25 @@
+# Systemd service file for SZ Global Arabia Webhook Server
+# This runs the webhook that allows one-click deployment from browser
+#
+# Installation:
+# 1. Copy to: /etc/systemd/system/szglobal-webhook.service
+# 2. Reload systemd: sudo systemctl daemon-reload
+# 3. Enable service: sudo systemctl enable szglobal-webhook
+# 4. Start service: sudo systemctl start szglobal-webhook
+#
+# Access: http://68.183.92.148:9000/deploy?key=szglobal2024
+
+[Unit]
+Description=SZ Global Arabia Deployment Webhook
+After=network.target
+
+[Service]
+User=root
+Group=root
+WorkingDirectory=/var/www/szglobal
+ExecStart=/var/www/szglobal/venv/bin/python /var/www/szglobal/deploy_webhook.py
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
