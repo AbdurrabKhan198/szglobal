@@ -2,430 +2,352 @@
 {% load static %}
 
 {% block content %}
-<!-- Hero Section -->
-<section id="home" class="hero-section">
-    <div class="hero-background"></div>
-    <div class="hero-gradient"></div>
-    <div class="world-map-overlay"></div>
-    <div class="container hero-content">
-        <div class="row align-items-center min-vh-100">
-            <div class="col-lg-8 mx-auto text-center">
-                <div class="hero-logo-animation">
-                    <svg class="sz-monogram" width="200" height="200" viewBox="0 0 200 200">
-                        <circle class="glow-circle" cx="100" cy="100" r="80" fill="none" stroke="#FFB86C" stroke-width="2" opacity="0.3"/>
-                        <path class="sz-path" d="M 60 80 L 140 80 M 60 120 L 140 120 M 100 50 L 100 150" stroke="#FFB86C" stroke-width="4" fill="none"/>
-                        <circle class="pulse-dot" cx="100" cy="100" r="8" fill="#FFB86C"/>
-                    </svg>
-                </div>
-                <h1 class="hero-title fade-in-up">Delivering Quality From India to the World</h1>
-                <p class="hero-subtitle fade-in-up delay-1">Premium Rice, Spices, Agro Products & Wood</p>
-                <div class="hero-cta fade-in-up delay-2">
-                    <a href="#products" class="btn btn-primary-custom me-3">Explore Products</a>
-                    <a href="{% url 'website:contact' %}" class="btn btn-secondary-custom">Get In Touch</a>
-                </div>
+<!-- Hero Section - Modern Tailwind -->
+<section id="home"
+    class="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-100 pt-20">
+    <!-- Animated Background -->
+    <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute top-0 left-0 w-96 h-96 bg-light-orange/10 rounded-full filter blur-3xl animate-pulse">
+        </div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-light-gray/20 rounded-full filter blur-3xl animate-pulse"
+            style="animation-delay: 1s;"></div>
+    </div>
+
+    <div class="container mx-auto px-4 lg:px-8 relative z-10">
+        <div class="max-w-5xl mx-auto text-center">
+            <!-- Logo -->
+            <div class="mb-8 animate-fade-in-down">
+                <img src="{% static 'website/images/logo.png' %}" alt="Arabia Traders Logo"
+                    class="w-48 h-auto mx-auto hover:scale-110 transition-transform duration-300">
+            </div>
+
+            <!-- Main Title -->
+            <h1
+                class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 mb-6 leading-tight animate-fade-in-up">
+                Delivering Quality<br>
+                <span class="bg-gradient-to-r from-light-orange to-dark-orange bg-clip-text text-transparent">From India
+                    to the World</span>
+            </h1>
+
+            <!-- Subtitle -->
+            <p class="text-xl md:text-2xl text-gray-600 mb-10 animate-fade-in-up animation-delay-200">
+                Premium Raw Rice, Raw Spices & Plywood Sheets
+            </p>
+
+            <!-- CTA Buttons -->
+            <div
+                class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up animation-delay-400">
+                <a href="#products"
+                    class="bg-gradient-to-r from-light-orange to-dark-orange text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 inline-block w-full sm:w-auto">
+                    Explore Products
+                </a>
+                <a href="{% url 'website:contact' %}"
+                    class="bg-white border-2 border-gray-300 text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:border-light-orange hover:text-light-orange hover:-translate-y-1 transition-all duration-300 inline-block w-full sm:w-auto">
+                    Get In Touch
+                </a>
             </div>
         </div>
     </div>
-    <div class="export-lines">
-        <div class="export-line" style="left: 20%; animation-delay: 0s;"></div>
-        <div class="export-line" style="left: 40%; animation-delay: 1s;"></div>
-        <div class="export-line" style="left: 60%; animation-delay: 2s;"></div>
-        <div class="export-line" style="left: 80%; animation-delay: 1.5s;"></div>
-    </div>
-    <div class="scroll-indicator">
-        <div class="mouse">
-            <div class="wheel"></div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div class="w-6 h-10 border-2 border-light-orange rounded-full flex justify-center">
+            <div class="w-1 h-3 bg-light-orange rounded-full mt-2 animate-scroll"></div>
         </div>
     </div>
 </section>
 
 <!-- Products Section Wrapper -->
-<section id="products" class="products-wrapper">
-<!-- Rice Products Section -->
-<section id="rice-products" class="products-section rice-section">
-    <div class="grain-texture-overlay"></div>
-    <div class="container py-5">
-        <div class="section-header text-center mb-5">
-            <h2 class="section-title">Premium Rice Products</h2>
-            <div class="title-underline"></div>
-            <p class="section-subtitle">Exported to over 50 countries worldwide</p>
-        </div>
-        <div class="row g-4">
-            <div class="col-md-6 col-lg-3">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=800&q=90&auto=format&fit=crop" alt="Basmati Rice" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                    </div>
-                    <div class="product-content">
-                        <h4>Basmati Rice</h4>
-                        <p>Premium long-grain aromatic rice</p>
-                        <a href="{% url 'website:rice' %}" class="btn btn-link-custom">Learn More <i class="bi bi-arrow-right"></i></a>
-                    </div>
+<section id="products" class="scroll-mt-20">
+    <!-- Rice Products Section -->
+    <section id="rice-products" class="py-20 bg-gradient-to-b from-white to-gray-50">
+        <div class="container mx-auto px-4 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+                    Premium Raw Rice Products
+                </h2>
+                <div class="w-24 h-1.5 bg-gradient-to-r from-light-orange to-dark-orange mx-auto rounded-full mb-4">
                 </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=800&q=90&auto=format&fit=crop" alt="Jasmine Rice" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                    </div>
-                    <div class="product-content">
-                        <h4>Jasmine Rice</h4>
-                        <p>Fragrant and delicate texture</p>
-                        <a href="{% url 'website:rice' %}" class="btn btn-link-custom">Learn More <i class="bi bi-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=800&q=90&auto=format&fit=crop" alt="Brown Rice" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                    </div>
-                    <div class="product-content">
-                        <h4>Brown Rice</h4>
-                        <p>Nutritious whole grain option</p>
-                        <a href="{% url 'website:rice' %}" class="btn btn-link-custom">Learn More <i class="bi bi-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=800&q=90&auto=format&fit=crop" alt="Parboiled Rice" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                    </div>
-                    <div class="product-content">
-                        <h4>Parboiled Rice</h4>
-                        <p>Pre-cooked and nutrient-rich</p>
-                        <a href="{% url 'website:rice' %}" class="btn btn-link-custom">Learn More <i class="bi bi-arrow-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Spices Section -->
-<section id="spices-products" class="products-section spices-section">
-    <div class="container py-5">
-        <div class="section-header text-center mb-5">
-            <h2 class="section-title">Exotic Spices Collection</h2>
-            <div class="title-underline"></div>
-            <p class="section-subtitle">Authentic flavors from the heart of India</p>
-        </div>
-        <div class="row g-4">
-            <div class="col-md-6 col-lg-4">
-                <div class="spice-card">
-                    <div class="spice-image">
-                        <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&q=90&auto=format&fit=crop" alt="Turmeric" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                        <div class="spice-particles"></div>
-                    </div>
-                    <div class="spice-content">
-                        <h4>Turmeric</h4>
-                        <p>Golden spice with health benefits</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="spice-card">
-                    <div class="spice-image">
-                        <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=800&q=90&auto=format&fit=crop" alt="Cardamom" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover; display: block; opacity: 1;" loading="lazy">
-                        <div class="spice-particles"></div>
-                    </div>
-                    <div class="spice-content">
-                        <h4>Cardamom</h4>
-                        <p>Premium aromatic pods</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="spice-card">
-                    <div class="spice-image">
-                        <img src="https://images.unsplash.com/photo-1609501676725-7183bf293d0e?w=800&q=90&auto=format&fit=crop" alt="Cumin" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover; display: block; opacity: 1;" loading="lazy">
-                        <div class="spice-particles"></div>
-                    </div>
-                    <div class="spice-content">
-                        <h4>Cumin</h4>
-                        <p>Earthy and warm flavor</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="spice-card">
-                    <div class="spice-image">
-                        <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=800&q=90&auto=format&fit=crop" alt="Coriander" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                        <div class="spice-particles"></div>
-                    </div>
-                    <div class="spice-content">
-                        <h4>Coriander</h4>
-                        <p>Fresh and citrusy notes</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="spice-card">
-                    <div class="spice-image">
-                        <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=800&q=90&auto=format&fit=crop" alt="Black Pepper" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                        <div class="spice-particles"></div>
-                    </div>
-                    <div class="spice-content">
-                        <h4>Black Pepper</h4>
-                        <p>Bold and pungent spice</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-4">
-                <div class="spice-card">
-                    <div class="spice-image">
-                        <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?w=800&q=90&auto=format&fit=crop" alt="Chili Powder" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                        <div class="spice-particles"></div>
-                    </div>
-                    <div class="spice-content">
-                        <h4>Chili Powder</h4>
-                        <p>Fiery and vibrant</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="text-center mt-5">
-            <a href="{% url 'website:spices' %}" class="btn btn-primary-custom">View All Spices</a>
-        </div>
-    </div>
-</section>
-
-<!-- Wood & Timber Section -->
-<section id="wood-products" class="products-section wood-section">
-    <div class="wood-texture-overlay"></div>
-    <div class="container py-5">
-        <div class="section-header text-center mb-5">
-            <h2 class="section-title">Wood & Timber Export</h2>
-            <div class="title-underline green"></div>
-            <p class="section-subtitle">Sustainable and premium quality timber</p>
-        </div>
-        <div class="wood-carousel">
-            <div class="wood-item">
-                <div class="wood-image">
-                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=90&auto=format&fit=crop" alt="Teak Wood" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                </div>
-                <div class="wood-content">
-                    <h4>Teak Wood</h4>
-                    <p>Premium hardwood for furniture</p>
-                </div>
-            </div>
-            <div class="wood-item">
-                <div class="wood-image">
-                    <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=800&q=90&auto=format&fit=crop" alt="Rosewood" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                </div>
-                <div class="wood-content">
-                    <h4>Rosewood</h4>
-                    <p>Luxurious and durable</p>
-                </div>
-            </div>
-            <div class="wood-item">
-                <div class="wood-image">
-                    <img src="https://images.unsplash.com/photo-1590736969955-71cc94901144?w=800&q=90&auto=format&fit=crop" alt="Bamboo" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                </div>
-                <div class="wood-content">
-                    <h4>Bamboo</h4>
-                    <p>Eco-friendly alternative</p>
-                </div>
-            </div>
-            <div class="wood-item">
-                <div class="wood-image">
-                    <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=90&auto=format&fit=crop" alt="Pine Wood" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                </div>
-                <div class="wood-content">
-                    <h4>Pine Wood</h4>
-                    <p>Lightweight and versatile</p>
-                </div>
-            </div>
-        </div>
-        <div class="text-center mt-5">
-            <a href="{% url 'website:wood' %}" class="btn btn-primary-custom">Explore Timber Products</a>
-        </div>
-    </div>
-</section>
-</section>
-<!-- End Products Section Wrapper -->
-
-<!-- Global Export Network -->
-<section id="network" class="network-section">
-    <div class="container py-5">
-        <div class="section-header text-center mb-5">
-            <h2 class="section-title">Global Export Network</h2>
-            <div class="title-underline"></div>
-            <p class="section-subtitle">Connecting India to the world</p>
-        </div>
-        <div class="world-map-container">
-            <svg class="world-map" viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg">
-                <!-- Simplified world map paths -->
-                <g class="countries">
-                    <path class="country" d="M 200 200 L 300 200 L 300 250 L 200 250 Z" fill="#D9D9D9" opacity="0.3"/>
-                    <path class="country" d="M 400 150 L 500 150 L 500 200 L 400 200 Z" fill="#D9D9D9" opacity="0.3"/>
-                    <path class="country" d="M 600 200 L 700 200 L 700 250 L 600 250 Z" fill="#D9D9D9" opacity="0.3"/>
-                    <path class="country" d="M 300 300 L 400 300 L 400 350 L 300 350 Z" fill="#D9D9D9" opacity="0.3"/>
-                </g>
-                <!-- India (center) -->
-                <circle class="india-dot" cx="500" cy="250" r="15" fill="#FFB86C"/>
-                <text x="500" y="270" text-anchor="middle" fill="#FFB86C" font-size="14" font-weight="bold">India</text>
-                <!-- Export destinations -->
-                <circle class="export-dot" cx="200" cy="225" r="8" fill="#FFB86C">
-                    <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite"/>
-                </circle>
-                <circle class="export-dot" cx="450" cy="175" r="8" fill="#FFB86C">
-                    <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="0.5s" repeatCount="indefinite"/>
-                </circle>
-                <circle class="export-dot" cx="650" cy="225" r="8" fill="#FFB86C">
-                    <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="1s" repeatCount="indefinite"/>
-                </circle>
-                <circle class="export-dot" cx="350" cy="325" r="8" fill="#FFB86C">
-                    <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" begin="1.5s" repeatCount="indefinite"/>
-                </circle>
-                <!-- Connection lines -->
-                <line class="export-line" x1="500" y1="250" x2="200" y2="225" stroke="#FFB86C" stroke-width="2" opacity="0.5">
-                    <animate attributeName="opacity" values="0;0.5;0" dur="3s" repeatCount="indefinite"/>
-                </line>
-                <line class="export-line" x1="500" y1="250" x2="450" y2="175" stroke="#FFB86C" stroke-width="2" opacity="0.5">
-                    <animate attributeName="opacity" values="0;0.5;0" dur="3s" begin="0.5s" repeatCount="indefinite"/>
-                </line>
-                <line class="export-line" x1="500" y1="250" x2="650" y2="225" stroke="#FFB86C" stroke-width="2" opacity="0.5">
-                    <animate attributeName="opacity" values="0;0.5;0" dur="3s" begin="1s" repeatCount="indefinite"/>
-                </line>
-                <line class="export-line" x1="500" y1="250" x2="350" y2="325" stroke="#FFB86C" stroke-width="2" opacity="0.5">
-                    <animate attributeName="opacity" values="0;0.5;0" dur="3s" begin="1.5s" repeatCount="indefinite"/>
-                </line>
-            </svg>
-        </div>
-        <div class="row mt-5">
-            <div class="col-md-3 col-6 mb-4">
-                <div class="stat-card" style="background-image: url('https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800&q=90&auto=format&fit=crop'); background-size: cover; background-position: center;">
-                    <div style="background: rgba(255, 255, 255, 0.9); padding: 1.5rem; border-radius: 15px;">
-                        <h3 class="stat-number">50+</h3>
-                        <p class="stat-label">Countries</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-6 mb-4">
-                <div class="stat-card" style="background-image: url('https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=90&auto=format&fit=crop'); background-size: cover; background-position: center;">
-                    <div style="background: rgba(255, 255, 255, 0.9); padding: 1.5rem; border-radius: 15px;">
-                        <h3 class="stat-number">1000+</h3>
-                        <p class="stat-label">Clients</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-6 mb-4">
-                <div class="stat-card" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=90&auto=format&fit=crop'); background-size: cover; background-position: center;">
-                    <div style="background: rgba(255, 255, 255, 0.9); padding: 1.5rem; border-radius: 15px;">
-                        <h3 class="stat-number">25+</h3>
-                        <p class="stat-label">Years Experience</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 col-6 mb-4">
-                <div class="stat-card" style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=90&auto=format&fit=crop'); background-size: cover; background-position: center;">
-                    <div style="background: rgba(255, 255, 255, 0.9); padding: 1.5rem; border-radius: 15px;">
-                        <h3 class="stat-number">5000+</h3>
-                        <p class="stat-label">Shipments</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Why Choose Us -->
-<section id="why-choose-us" class="why-section">
-    <div class="container py-5">
-        <div class="section-header text-center mb-5">
-            <h2 class="section-title">Why Choose Us</h2>
-            <div class="title-underline"></div>
-        </div>
-        <div class="row g-4">
-            <div class="col-md-6 col-lg-3">
-                <div class="feature-card">
-                    <div class="feature-image" style="height: 200px; overflow: hidden; border-radius: 15px 15px 0 0; margin: -1.5rem -1.5rem 1rem -1.5rem;">
-                        <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&q=90&auto=format&fit=crop" alt="Premium Quality" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                    </div>
-                    <div class="feature-icon">
-                        <i class="bi bi-award"></i>
-                    </div>
-                    <h4>Premium Quality</h4>
-                    <p>Rigorous quality control ensures only the finest products reach our clients.</p>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="feature-card">
-                    <div class="feature-image" style="height: 200px; overflow: hidden; border-radius: 15px 15px 0 0; margin: -1.5rem -1.5rem 1rem -1.5rem;">
-                        <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800&q=90&auto=format&fit=crop" alt="Global Reach" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                    </div>
-                    <div class="feature-icon">
-                        <i class="bi bi-globe"></i>
-                    </div>
-                    <h4>Global Reach</h4>
-                    <p>Extensive network spanning across continents for seamless exports.</p>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="feature-card">
-                    <div class="feature-image" style="height: 200px; overflow: hidden; border-radius: 15px 15px 0 0; margin: -1.5rem -1.5rem 1rem -1.5rem;">
-                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=90&auto=format&fit=crop" alt="Certified & Trusted" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                    </div>
-                    <div class="feature-icon">
-                        <i class="bi bi-shield-check"></i>
-                    </div>
-                    <h4>Certified & Trusted</h4>
-                    <p>ISO certified with industry-leading certifications and standards.</p>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-3">
-                <div class="feature-card">
-                    <div class="feature-image" style="height: 200px; overflow: hidden; border-radius: 15px 15px 0 0; margin: -1.5rem -1.5rem 1rem -1.5rem;">
-                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=90&auto=format&fit=crop" alt="Reliable Logistics" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-                    </div>
-                    <div class="feature-icon">
-                        <i class="bi bi-truck"></i>
-                    </div>
-                    <h4>Reliable Logistics</h4>
-                    <p>Efficient supply chain management for timely deliveries worldwide.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- About Company -->
-<section id="about" class="about-section">
-    <div class="container py-5">
-        <div class="row align-items-center">
-            <div class="col-lg-6 mb-4 mb-lg-0">
-                <div class="about-image">
-                    <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1200&q=90&auto=format&fit=crop" alt="About Arabia Traders" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover; border-radius: 20px;" loading="lazy">
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <h2 class="section-title text-start">About Arabia Traders</h2>
-                <div class="title-underline left"></div>
-                <p class="about-text">
-                    Arabia Traders Private Ltd. stands as a premier import-export company, specializing in high-quality agricultural products and timber. With over 25 years of excellence, we have established ourselves as a trusted partner in the global trade market.
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    <span class="text-light-orange font-semibold">Origin: India</span> | Raw rice exported to over 50
+                    countries worldwide
                 </p>
-                <p class="about-text">
-                    Our commitment to quality, sustainability, and customer satisfaction drives everything we do. From premium rice varieties to exotic spices, agro products, and sustainable timber, we ensure that every shipment meets the highest international standards.
-                </p>
-                <div class="about-features">
-                    <div class="about-feature-item">
-                        <i class="bi bi-check-circle-fill"></i>
-                        <span>ISO 9001:2015 Certified</span>
+            </div>
+
+            <!-- Rice Products Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Rice Card 1 -->
+                <div
+                    class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1516684732162-798a0062be99?w=800&q=90&auto=format&fit=crop"
+                            alt="Raw Basmati Rice"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     </div>
-                    <div class="about-feature-item">
-                        <i class="bi bi-check-circle-fill"></i>
-                        <span>FSSAI Licensed</span>
-                    </div>
-                    <div class="about-feature-item">
-                        <i class="bi bi-check-circle-fill"></i>
-                        <span>Export License Holder</span>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Raw Basmati Rice</h3>
+                        <p class="text-gray-600 mb-4">Premium unprocessed long-grain aromatic rice from India</p>
+                        <a href="{% url 'website:rice' %}"
+                            class="text-light-orange font-semibold hover:text-dark-orange transition-colors inline-flex items-center gap-2 group/link">
+                            Learn More
+                            <i class="bi bi-arrow-right group-hover/link:translate-x-1 transition-transform"></i>
+                        </a>
                     </div>
                 </div>
-                <a href="{% url 'website:contact' %}" class="btn btn-primary-custom mt-4">Contact Us</a>
+
+                <!-- Rice Card 2 -->
+                <div
+                    class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?w=800&q=90&auto=format&fit=crop"
+                            alt="Raw Jasmine Rice"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Raw Jasmine Rice</h3>
+                        <p class="text-gray-600 mb-4">Unprocessed fragrant rice from India with delicate texture</p>
+                        <a href="{% url 'website:rice' %}"
+                            class="text-light-orange font-semibold hover:text-dark-orange transition-colors inline-flex items-center gap-2 group/link">
+                            Learn More
+                            <i class="bi bi-arrow-right group-hover/link:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Rice Card 3 -->
+                <div
+                    class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=800&q=90&auto=format&fit=crop"
+                            alt="Raw Brown Rice"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Raw Brown Rice</h3>
+                        <p class="text-gray-600 mb-4">Unpolished whole grain nutritious rice</p>
+                        <a href="{% url 'website:rice' %}"
+                            class="text-light-orange font-semibold hover:text-dark-orange transition-colors inline-flex items-center gap-2 group/link">
+                            Learn More
+                            <i class="bi bi-arrow-right group-hover/link:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Rice Card 4 -->
+                <div
+                    class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1598318070842-bd8dc06d21ce?w=800&q=90&auto=format&fit=crop"
+                            alt="Raw Parboiled Rice"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Raw Parboiled Rice</h3>
+                        <p class="text-gray-600 mb-4">Partially processed nutrient-rich rice</p>
+                        <a href="{% url 'website:rice' %}"
+                            class="text-light-orange font-semibold hover:text-dark-orange transition-colors inline-flex items-center gap-2 group/link">
+                            Learn More
+                            <i class="bi bi-arrow-right group-hover/link:translate-x-1 transition-transform"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <!-- Spices Section -->
+    <section id="spices-products" class="py-20 bg-gradient-to-b from-gray-50 to-white">
+        <div class="container mx-auto px-4 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+                    Raw Spices Collection
+                </h2>
+                <div class="w-24 h-1.5 bg-gradient-to-r from-light-orange to-dark-orange mx-auto rounded-full mb-4">
+                </div>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    <span class="text-light-orange font-semibold">Origin: India</span> | Authentic raw spices from the
+                    heart of India
+                </p>
+            </div>
+
+            <!-- Spices Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Turmeric -->
+                <div
+                    class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    <div class="h-72 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1615485500834-bc10199bc7c5?w=800&q=90&auto=format&fit=crop"
+                            alt="Raw Turmeric"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Raw Turmeric</h3>
+                        <p class="text-gray-600">Unprocessed golden spice with natural health benefits</p>
+                    </div>
+                </div>
+
+                <!-- Cardamom -->
+                <div
+                    class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    <div class="h-72 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1596040033229-a0b4a1ab4fd2?w=800&q=90&auto=format&fit=crop"
+                            alt="Cardamom"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Cardamom</h3>
+                        <p class="text-gray-600">Queen of spices with aromatic fragrance</p>
+                    </div>
+                </div>
+
+                <!-- Cumin -->
+                <div
+                    class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    <div class="h-72 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1596040033229-a0b4a1ab4fd2?w=800&q=90&auto=format&fit=crop"
+                            alt="Cumin"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-6 text-center">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Cumin</h3>
+                        <p class="text-gray-600">Essential spice with warm flavor</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="{% url 'website:spices' %}"
+                    class="bg-gradient-to-r from-light-orange to-dark-orange text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 inline-block">
+                    View All Spices
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plywood Section -->
+    <section id="wood-products" class="py-20 bg-gradient-to-b from-white to-gray-50">
+        <div class="container mx-auto px-4 lg:px-8">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+                    Premium Plywood Sheets
+                </h2>
+                <div class="w-24 h-1.5 bg-gradient-to-r from-light-orange to-dark-orange mx-auto rounded-full mb-4">
+                </div>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    <span class="text-light-orange font-semibold">Origin: India</span> | Quality plywood sheets in 4x4
+                    and 2x2 sizes
+                </p>
+            </div>
+
+            <!-- Plywood Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- 4x4 Plywood -->
+                <div
+                    class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    <div class="h-64 overflow-hidden relative">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-light-orange to-dark-orange">
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1617104551722-3b2ccb57be2c?w=800&q=90&auto=format&fit=crop"
+                            alt="4x4 Plywood"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-8 text-center">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-2">4x4 Plywood Sheets</h3>
+                        <p class="text-gray-600">Standard 4x4 feet plywood sheets</p>
+                    </div>
+                </div>
+
+                <!-- 2x2 Plywood -->
+                <div
+                    class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    <div class="h-64 overflow-hidden relative">
+                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-light-orange to-dark-orange">
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=800&q=90&auto=format&fit=crop"
+                            alt="2x2 Plywood"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-8 text-center">
+                        <h3 class="text-3xl font-bold text-gray-900 mb-2">2x2 Plywood Sheets</h3>
+                        <p class="text-gray-600">Compact 2x2 feet plywood sheets</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="{% url 'website:plywood' %}"
+                    class="bg-gradient-to-r from-light-orange to-dark-orange text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 inline-block">
+                    Explore Plywood Products
+                </a>
+            </div>
+        </div>
+    </section>
 </section>
+
+<!-- Custom Animations -->
+<style>
+    @keyframes fade-in-down {
+        from {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes fade-in-up {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes scroll {
+
+        0%,
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        50% {
+            transform: translateY(10px);
+            opacity: 0.3;
+        }
+    }
+
+    .animate-fade-in-down {
+        animation: fade-in-down 0.8s ease-out;
+    }
+
+    .animate-fade-in-up {
+        animation: fade-in-up 0.8s ease-out;
+    }
+
+    .animation-delay-200 {
+        animation-delay: 0.2s;
+        animation-fill-mode: both;
+    }
+
+    .animation-delay-400 {
+        animation-delay: 0.4s;
+        animation-fill-mode: both;
+    }
+
+    .animate-scroll {
+        animation: scroll 2s ease-in-out infinite;
+    }
+</style>
+
 {% endblock %}

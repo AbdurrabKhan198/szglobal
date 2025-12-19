@@ -1,62 +1,148 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Arabia Traders Private Ltd. - Delivering Quality From India to the World{% endblock %}</title>
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>{% block title %}Arabia Traders Private Ltd. - Delivering Quality From India to the World{% endblock %}
+    </title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'light-gray': '#D9D9D9',
+                        'light-orange': '#FFB86C',
+                        'dark-orange': '#FF9F4A',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Bootstrap Icons (keeping for icons) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <!-- Google Fonts - Modern Geometric Sans-serif -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'website/css/styles.css' %}">
     {% block extra_css %}{% endblock %}
 </head>
-<body>
+
+<body class="font-['Inter'] bg-white text-gray-900">
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand" href="{% url 'website:home' %}">
-                <span class="brand-logo">SZ</span>
-                <span class="brand-text">Arabia Traders</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'website:home' %}#home">Home</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="productsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Products
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="productsDropdown">
-                            <li><a class="dropdown-item" href="{% url 'website:all_products' %}">View All Products</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="{% url 'website:rice' %}">Rice Products</a></li>
-                            <li><a class="dropdown-item" href="{% url 'website:spices' %}">Spices Collection</a></li>
-                            <li><a class="dropdown-item" href="{% url 'website:wood' %}">Wood & Timber</a></li>
-                            <li><a class="dropdown-item" href="{% url 'website:agro' %}">Agro Products</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'website:home' %}#network">Global Network</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'website:about' %}">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'website:contact' %}">Contact</a>
-                    </li>
-                </ul>
+    <nav class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-lg shadow-md transition-all duration-300">
+        <div class="container mx-auto px-4 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="{% url 'website:home' %}" class="flex items-center space-x-3 group shrink-0">
+                    <img src="{% static 'website/images/logo.png' %}" alt="Arabia Traders Logo"
+                        class="w-48 h-auto object-contain transition-transform duration-300 group-hover:scale-105 mix-blend-multiply">
+                    <span class="text-xl font-bold text-gray-900 hidden sm:block">Arabia Traders</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="{% url 'website:home' %}"
+                        class="text-gray-700 hover:text-light-orange font-medium transition-colors duration-300 relative group">
+                        Home
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-light-orange group-hover:w-full transition-all duration-300"></span>
+                    </a>
+
+                    <!-- Products Dropdown -->
+                    <div class="relative group">
+                        <button
+                            class="text-gray-700 hover:text-light-orange font-medium transition-colors duration-300 flex items-center space-x-1">
+                            <span>Products</span>
+                            <i
+                                class="bi bi-chevron-down text-sm group-hover:rotate-180 transition-transform duration-300"></i>
+                        </button>
+                        <div
+                            class="absolute top-full left-0 mt-2 w-56 bg-white rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
+                            <div class="py-2">
+                                <a href="{% url 'website:all_products' %}"
+                                    class="block px-6 py-3 text-gray-700 hover:bg-light-orange/10 hover:text-light-orange transition-all duration-200">
+                                    View All Products
+                                </a>
+                                <div class="border-t border-gray-100 my-2"></div>
+                                <a href="{% url 'website:rice' %}"
+                                    class="block px-6 py-3 text-gray-700 hover:bg-light-orange/10 hover:text-light-orange transition-all duration-200">
+                                    Rice Products
+                                </a>
+                                <a href="{% url 'website:spices' %}"
+                                    class="block px-6 py-3 text-gray-700 hover:bg-light-orange/10 hover:text-light-orange transition-all duration-200">
+                                    Spices Collection
+                                </a>
+                                <a href="{% url 'website:plywood' %}"
+                                    class="block px-6 py-3 text-gray-700 hover:bg-light-orange/10 hover:text-light-orange transition-all duration-200">
+                                    Plywood
+                                </a>
+                                <a href="{% url 'website:industrial' %}"
+                                    class="block px-6 py-3 text-gray-700 hover:bg-light-orange/10 hover:text-light-orange transition-all duration-200">
+                                    Industrial Items
+                                </a>
+                                <a href="{% url 'website:safety_shoes' %}"
+                                    class="block px-6 py-3 text-gray-700 hover:bg-light-orange/10 hover:text-light-orange transition-all duration-200">
+                                    Safety Shoes
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="{% url 'website:about' %}"
+                        class="text-gray-700 hover:text-light-orange font-medium transition-colors duration-300 relative group">
+                        About
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-light-orange group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                    <a href="{% url 'website:contact' %}"
+                        class="bg-gradient-to-r from-light-orange to-dark-orange text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
+                        Contact Us
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button"
+                    class="lg:hidden text-gray-700 hover:text-light-orange transition-colors">
+                    <i class="bi bi-list text-3xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="lg:hidden hidden pb-6">
+                <div class="flex flex-col space-y-4">
+                    <a href="{% url 'website:home' %}"
+                        class="text-gray-700 hover:text-light-orange font-medium transition-colors">Home</a>
+                    <a href="{% url 'website:all_products' %}"
+                        class="text-gray-700 hover:text-light-orange font-medium transition-colors">All Products</a>
+                    <a href="{% url 'website:rice' %}"
+                        class="text-gray-700 hover:text-light-orange font-medium transition-colors pl-4">Rice
+                        Products</a>
+                    <a href="{% url 'website:spices' %}"
+                        class="text-gray-700 hover:text-light-orange font-medium transition-colors pl-4">Spices
+                        Collection</a>
+                    <a href="{% url 'website:plywood' %}"
+                        class="text-gray-700 hover:text-light-orange font-medium transition-colors pl-4">Plywood</a>
+                    <a href="{% url 'website:industrial' %}"
+                        class="text-gray-700 hover:text-light-orange font-medium transition-colors pl-4">Industrial
+                        Items</a>
+                    <a href="{% url 'website:safety_shoes' %}"
+                        class="text-gray-700 hover:text-light-orange font-medium transition-colors pl-4">Safety
+                        Shoes</a>
+                    <a href="{% url 'website:about' %}"
+                        class="text-gray-700 hover:text-light-orange font-medium transition-colors">About</a>
+                    <a href="{% url 'website:contact' %}"
+                        class="bg-gradient-to-r from-light-orange to-dark-orange text-white px-6 py-3 rounded-xl font-semibold text-center">Contact
+                        Us</a>
+                </div>
             </div>
         </div>
     </nav>
@@ -64,67 +150,124 @@
     <!-- Main Content -->
     {% block content %}{% endblock %}
 
-    <!-- Footer -->
-    <footer id="contact" class="footer-section">
-        <div class="footer-gradient"></div>
-        <div class="container py-5">
-            <div class="row g-4">
-                <div class="col-lg-4 mb-4 mb-lg-0">
-                    <h4 class="footer-title">Arabia Traders</h4>
-                    <p class="footer-text">Delivering quality from India to the world. Your trusted partner in premium import-export services.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="bi bi-facebook"></i></a>
-                        <a href="#"><i class="bi bi-linkedin"></i></a>
-                        <a href="#"><i class="bi bi-twitter"></i></a>
-                        <a href="#"><i class="bi bi-instagram"></i></a>
+    <!-- Footer - Modern Tailwind -->
+    <footer class="bg-gradient-to-br from-gray-900 to-gray-800 text-white relative overflow-hidden">
+        <!-- Gradient Accent -->
+        <div
+            class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-light-orange via-dark-orange to-light-orange">
+        </div>
+
+        <div class="container mx-auto px-4 lg:px-8 py-16">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+                <!-- About Section -->
+                <div>
+                    <h3 class="text-2xl font-bold text-light-orange mb-4">Arabia Traders</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Delivering premium quality products from India to the world. Your trusted partner for raw rice,
+                        spices, and plywood.
+                    </p>
+                    <!-- Social Links -->
+                    <div class="flex gap-3">
+                        <a href="#"
+                            class="w-11 h-11 bg-white/10 hover:bg-light-orange rounded-xl flex items-center justify-center text-white hover:scale-110 transition-all duration-300">
+                            <i class="bi bi-facebook text-lg"></i>
+                        </a>
+                        <a href="#"
+                            class="w-11 h-11 bg-white/10 hover:bg-light-orange rounded-xl flex items-center justify-center text-white hover:scale-110 transition-all duration-300">
+                            <i class="bi bi-twitter text-lg"></i>
+                        </a>
+                        <a href="#"
+                            class="w-11 h-11 bg-white/10 hover:bg-light-orange rounded-xl flex items-center justify-center text-white hover:scale-110 transition-all duration-300">
+                            <i class="bi bi-linkedin text-lg"></i>
+                        </a>
                     </div>
                 </div>
-                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
-                    <h5 class="footer-heading">Quick Links</h5>
-                    <ul class="footer-links">
-                        <li><a href="{% url 'website:home' %}#home">Home</a></li>
-                        <li><a href="{% url 'website:home' %}#products">Products</a></li>
-                        <li><a href="{% url 'website:home' %}#network">Global Network</a></li>
-                        <li><a href="{% url 'website:about' %}">About Us</a></li>
-                        <li><a href="{% url 'website:contact' %}">Contact Us</a></li>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-xl font-semibold text-light-orange mb-4">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="{% url 'website:home' %}"
+                                class="text-gray-300 hover:text-light-orange hover:translate-x-1 inline-block transition-all duration-300">
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'website:about' %}"
+                                class="text-gray-300 hover:text-light-orange hover:translate-x-1 inline-block transition-all duration-300">
+                                About Us
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'website:all_products' %}"
+                                class="text-gray-300 hover:text-light-orange hover:translate-x-1 inline-block transition-all duration-300">
+                                All Products
+                            </a>
+                        </li>
                     </ul>
                 </div>
-                <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
-                    <h5 class="footer-heading">Products</h5>
-                    <ul class="footer-links">
-                        <li><a href="{% url 'website:rice' %}">Rice</a></li>
-                        <li><a href="{% url 'website:spices' %}">Spices</a></li>
-                        <li><a href="{% url 'website:wood' %}">Wood & Timber</a></li>
-                        <li><a href="{% url 'website:agro' %}">Agro Products</a></li>
+
+                <!-- Products -->
+                <div>
+                    <h4 class="text-xl font-semibold text-light-orange mb-4">Our Products</h4>
+                    <ul class="space-y-3">
+                        <li>
+                            <a href="{% url 'website:rice' %}"
+                                class="text-gray-300 hover:text-light-orange hover:translate-x-1 inline-block transition-all duration-300">
+                                Rice Products
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'website:spices' %}"
+                                class="text-gray-300 hover:text-light-orange hover:translate-x-1 inline-block transition-all duration-300">
+                                Spices Collection
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'website:plywood' %}"
+                                class="text-gray-300 hover:text-light-orange hover:translate-x-1 inline-block transition-all duration-300">
+                                Plywood Sheets
+                            </a>
+                        </li>
                     </ul>
                 </div>
-                <div class="col-lg-3 col-md-4">
-                    <h5 class="footer-heading">Contact</h5>
-                    <ul class="footer-contact">
-                        <li><i class="bi bi-geo-alt"></i> <span>Mumbai, India</span></li>
-                        <li><i class="bi bi-telephone"></i> <span>+91 XXX XXX XXXX</span></li>
-                        <li><i class="bi bi-envelope"></i> <span>info@arabiatraders.com</span></li>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-xl font-semibold text-light-orange mb-4">Contact Us</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i class="bi bi-geo-alt-fill text-light-orange text-xl mt-1"></i>
+                            <span class="text-gray-300">
+                                India<br>
+                                Exporting Worldwide
+                            </span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="bi bi-envelope-fill text-light-orange text-xl"></i>
+                            <a href="mailto:info@arabiatraders.com"
+                                class="text-gray-300 hover:text-light-orange transition-colors">
+                                info@arabiatraders.com
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
-            <div class="footer-bottom mt-5 pt-4">
-                <div class="row">
-                    <div class="col-md-6">
-                        <p>&copy; 2024 Arabia Traders Private Ltd. All rights reserved.</p>
-                    </div>
-                    <div class="col-md-6 text-md-end">
-                        <p>Certified Exporters | ISO 9001:2015</p>
-                    </div>
-                </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2025 Arabia Traders Private Ltd. All rights reserved. |
+                    <span class="text-light-orange">Origin: India</span>
+                </p>
             </div>
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Custom JS -->
     <script src="{% static 'website/js/script.js' %}"></script>
     {% block extra_js %}{% endblock %}
 </body>
-</html>
 
+</html>

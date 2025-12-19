@@ -1,0 +1,34 @@
+# Systemd service file for SZ Global Arabia (Gunicorn)
+# Server: 68.183.92.148
+# Domain: szglobalarabia.com
+#
+# Installation:
+# 1. Copy to: /etc/systemd/system/szglobal.service
+# 2. Reload systemd: sudo systemctl daemon-reload
+# 3. Enable service: sudo systemctl enable szglobal
+# 4. Start service: sudo systemctl start szglobal
+# 5. Check status: sudo systemctl status szglobal
+
+[Unit]
+Description=SZ Global Arabia Django Application (Gunicorn)
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/szglobal
+Environment="DJANGO_SETTINGS_MODULE=szglobal.settings_production"
+Environment="DJANGO_SECRET_KEY=your-super-secret-production-key-change-this"
+ExecStart=/var/www/szglobal/venv/bin/gunicorn --config /var/www/szglobal/gunicorn.conf.py szglobal.wsgi:application
+ExecReload=/bin/kill -s HUP $MAINPID
+Restart=always
+RestartSec=3
+KillMode=mixed
+TimeoutStopSec=5
+
+# Security settings
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

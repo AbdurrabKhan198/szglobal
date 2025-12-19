@@ -3,245 +3,192 @@
 
 {% block title %}Contact Us - Arabia Traders Private Ltd.{% endblock %}
 
-{% block extra_css %}
-<style>
-    .contact-hero {
-        background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
-        padding: 10rem 0 6rem;
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .contact-hero::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(circle at 50% 50%, rgba(255, 184, 108, 0.1) 0%, transparent 70%);
-        z-index: 1;
-    }
-    
-    .contact-hero-content {
-        position: relative;
-        z-index: 2;
-    }
-    
-    .contact-form-card {
-        background: white;
-        border-radius: 20px;
-        padding: 3rem;
-        border: 2px solid rgba(153, 153, 153, 0.4);
-        box-shadow: 
-            0 3px 10px rgba(0, 0, 0, 0.08),
-            0 10px 30px rgba(217, 217, 217, 0.25),
-            0 0 0 1px rgba(255, 255, 255, 0.5) inset,
-            0 -2px 0 rgba(0, 0, 0, 0.05) inset;
-    }
-    
-    .contact-info-card {
-        background: white;
-        border-radius: 20px;
-        padding: 2.5rem;
-        border: 2px solid rgba(153, 153, 153, 0.4);
-        box-shadow: 
-            0 3px 10px rgba(0, 0, 0, 0.08),
-            0 10px 30px rgba(217, 217, 217, 0.25),
-            0 0 0 1px rgba(255, 255, 255, 0.5) inset,
-            0 -2px 0 rgba(0, 0, 0, 0.05) inset;
-        height: 100%;
-    }
-    
-    .contact-info-item {
-        display: flex;
-        align-items: flex-start;
-        gap: 1.5rem;
-        margin-bottom: 2rem;
-        padding-bottom: 2rem;
-        border-bottom: 1px solid rgba(217, 217, 217, 0.3);
-    }
-    
-    .contact-info-item:last-child {
-        border-bottom: none;
-        margin-bottom: 0;
-        padding-bottom: 0;
-    }
-    
-    .contact-icon {
-        width: 50px;
-        height: 50px;
-        background: linear-gradient(135deg, var(--light-orange), var(--light-orange));
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.5rem;
-        color: white;
-        flex-shrink: 0;
-        box-shadow: 0 4px 15px rgba(255, 184, 108, 0.3);
-    }
-    
-    .form-control {
-        border: 2px solid rgba(217, 217, 217, 0.5);
-        border-radius: 10px;
-        padding: 0.75rem 1rem;
-        font-size: 1rem;
-        transition: all 0.3s ease;
-    }
-    
-    .form-control:focus {
-        border-color: var(--light-orange);
-        box-shadow: 0 0 0 3px rgba(255, 184, 108, 0.1);
-        outline: none;
-    }
-    
-    .form-label {
-        font-weight: 600;
-        color: var(--text-black);
-        margin-bottom: 0.5rem;
-    }
-    
-    .alert {
-        border-radius: 10px;
-        border: none;
-        padding: 1rem 1.5rem;
-    }
-    
-    .alert-success {
-        background: rgba(155, 231, 165, 0.2);
-        color: #2d5016;
-        border-left: 4px solid var(--light-orange);
-    }
-    
-    .alert-error {
-        background: rgba(255, 184, 108, 0.1);
-        color: #8b4513;
-        border-left: 4px solid var(--light-orange);
-    }
-</style>
-{% endblock %}
-
 {% block content %}
-<!-- Contact Hero Section -->
-<section class="contact-hero">
-    <div class="container contact-hero-content">
-        <div class="row">
-            <div class="col-lg-8 mx-auto text-center">
-                <h1 class="display-3 fw-bold mb-4 fade-in-up">Get In Touch</h1>
-                <p class="lead mb-4 fade-in-up delay-1">We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
-            </div>
+<!-- Contact Hero Section - Modern Tailwind -->
+<section
+    class="min-h-[40vh] flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-100 pt-32 pb-20">
+    <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-light-orange/10 rounded-full filter blur-3xl animate-pulse">
         </div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-light-gray/20 rounded-full filter blur-3xl animate-pulse"
+            style="animation-delay: 1s;"></div>
+    </div>
+
+    <div class="container mx-auto px-4 lg:px-8 relative z-10 text-center">
+        <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
+            Get In <span
+                class="bg-gradient-to-r from-light-orange to-dark-orange bg-clip-text text-transparent">Touch</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-600 mb-4 max-w-2xl mx-auto">
+            We'd love to hear from you. Send us a message and our team will respond within 24 hours.
+        </p>
+        <div class="w-24 h-1.5 bg-gradient-to-r from-light-orange to-dark-orange mx-auto rounded-full"></div>
     </div>
 </section>
 
 <!-- Contact Section -->
-<section class="py-5">
-    <div class="container">
-        <div class="row g-4">
-            <!-- Contact Form -->
-            <div class="col-lg-8">
-                <div class="contact-form-card">
-                    <h2 class="section-title text-start mb-4">Send Us a Message</h2>
-                    <div class="title-underline left mb-4"></div>
-                    
+<section class="py-24 bg-white">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="flex flex-col lg:flex-row gap-16">
+
+            <!-- Contact Form Area -->
+            <div class="lg:w-2/3">
+                <div class="bg-white rounded-3xl shadow-2xl border border-gray-100 p-8 md:p-12">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-2">Send Us a Message</h2>
+                    <p class="text-gray-600 mb-8 font-medium">Have questions or need a custom quote? Fill out the form
+                        below.</p>
+
                     {% if messages %}
+                    <div class="mb-8 space-y-4">
                         {% for message in messages %}
-                            <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
-                                {{ message }}
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        <div
+                            class="p-4 rounded-2xl flex items-center justify-between {% if message.tags == 'success' %}bg-green-50 text-green-700 border border-green-200{% else %}bg-orange-50 text-orange-700 border border-orange-200{% endif %} animate-fade-in">
+                            <div class="flex items-center gap-3">
+                                <i
+                                    class="bi {% if message.tags == 'success' %}bi-check-circle-fill{% else %}bi-exclamation-triangle-fill{% endif %} text-xl"></i>
+                                <span class="font-medium">{{ message }}</span>
                             </div>
+                            <button onclick="this.parentElement.remove()"
+                                class="text-current hover:opacity-70 transition-opacity">
+                                <i class="bi bi-x-lg"></i>
+                            </button>
+                        </div>
                         {% endfor %}
+                    </div>
                     {% endif %}
-                    
-                    <form method="POST" action="{% url 'website:contact' %}">
+
+                    <form method="POST" action="{% url 'website:contact' %}" class="space-y-6">
                         {% csrf_token %}
-                        <div class="row g-3">
-                            <div class="col-md-6">
-                                <label for="{{ form.name.id_for_label }}" class="form-label">Name *</label>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Name -->
+                            <div class="space-y-2">
+                                <label for="{{ form.name.id_for_label }}"
+                                    class="text-sm font-bold text-gray-700 ml-1">Full Name *</label>
                                 {{ form.name }}
                                 {% if form.name.errors %}
-                                    <div class="text-danger small">{{ form.name.errors }}</div>
+                                <p class="text-xs text-red-500 font-medium ml-1">{{ form.name.errors.0 }}</p>
                                 {% endif %}
                             </div>
-                            <div class="col-md-6">
-                                <label for="{{ form.email.id_for_label }}" class="form-label">Email *</label>
+                            <!-- Email -->
+                            <div class="space-y-2">
+                                <label for="{{ form.email.id_for_label }}"
+                                    class="text-sm font-bold text-gray-700 ml-1">Email Address *</label>
                                 {{ form.email }}
                                 {% if form.email.errors %}
-                                    <div class="text-danger small">{{ form.email.errors }}</div>
+                                <p class="text-xs text-red-500 font-medium ml-1">{{ form.email.errors.0 }}</p>
                                 {% endif %}
                             </div>
-                            <div class="col-md-6">
-                                <label for="{{ form.phone.id_for_label }}" class="form-label">Phone</label>
+                            <!-- Phone -->
+                            <div class="space-y-2">
+                                <label for="{{ form.phone.id_for_label }}"
+                                    class="text-sm font-bold text-gray-700 ml-1">Phone Number</label>
                                 {{ form.phone }}
                                 {% if form.phone.errors %}
-                                    <div class="text-danger small">{{ form.phone.errors }}</div>
+                                <p class="text-xs text-red-500 font-medium ml-1">{{ form.phone.errors.0 }}</p>
                                 {% endif %}
                             </div>
-                            <div class="col-md-6">
-                                <label for="{{ form.subject.id_for_label }}" class="form-label">Subject *</label>
+                            <!-- Subject -->
+                            <div class="space-y-2">
+                                <label for="{{ form.subject.id_for_label }}"
+                                    class="text-sm font-bold text-gray-700 ml-1">Subject *</label>
                                 {{ form.subject }}
                                 {% if form.subject.errors %}
-                                    <div class="text-danger small">{{ form.subject.errors }}</div>
+                                <p class="text-xs text-red-500 font-medium ml-1">{{ form.subject.errors.0 }}</p>
                                 {% endif %}
                             </div>
-                            <div class="col-12">
-                                <label for="{{ form.message.id_for_label }}" class="form-label">Message *</label>
-                                {{ form.message }}
-                                {% if form.message.errors %}
-                                    <div class="text-danger small">{{ form.message.errors }}</div>
-                                {% endif %}
-                            </div>
-                            <div class="col-12">
-                                <button type="submit" class="btn btn-primary-custom">Send Message</button>
-                            </div>
+                        </div>
+
+                        <!-- Message -->
+                        <div class="space-y-2">
+                            <label for="{{ form.message.id_for_label }}"
+                                class="text-sm font-bold text-gray-700 ml-1">Your Message *</label>
+                            {{ form.message }}
+                            {% if form.message.errors %}
+                            <p class="text-xs text-red-500 font-medium ml-1">{{ form.message.errors.0 }}</p>
+                            {% endif %}
+                        </div>
+
+                        <div class="pt-4">
+                            <button type="submit"
+                                class="w-full sm:w-auto bg-gradient-to-r from-light-orange to-dark-orange text-white px-10 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 active:translate-y-0 transition-all duration-300">
+                                Send Message <i class="bi bi-send ml-2"></i>
+                            </button>
                         </div>
                     </form>
                 </div>
             </div>
-            
-            <!-- Contact Information -->
-            <div class="col-lg-4">
-                <div class="contact-info-card">
-                    <h3 class="mb-4">Contact Information</h3>
-                    
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
-                            <i class="bi bi-geo-alt-fill"></i>
-                        </div>
-                        <div>
-                            <h5>Address</h5>
-                            <p class="mb-0">Mumbai, Maharashtra<br>India</p>
-                        </div>
-                    </div>
-                    
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
-                            <i class="bi bi-telephone-fill"></i>
-                        </div>
-                        <div>
-                            <h5>Phone</h5>
-                            <p class="mb-0">+91 XXX XXX XXXX<br>+91 XXX XXX XXXX</p>
+
+            <!-- Contact Info Area -->
+            <div class="lg:w-1/3">
+                <div class="space-y-8">
+                    <!-- Address Card -->
+                    <div
+                        class="bg-gray-50 rounded-3xl p-8 border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                        <div class="flex items-start gap-6">
+                            <div
+                                class="w-14 h-14 bg-gradient-to-br from-light-orange to-dark-orange rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg shrink-0 group-hover:scale-110 transition-transform duration-300">
+                                <i class="bi bi-geo-alt-fill"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">Our Office</h3>
+                                <p class="text-gray-600 leading-relaxed">Mumbai, Maharashtra<br>India</p>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
-                            <i class="bi bi-envelope-fill"></i>
-                        </div>
-                        <div>
-                            <h5>Email</h5>
-                            <p class="mb-0">info@arabiatraders.com<br>sales@arabiatraders.com</p>
+
+                    <!-- Phone Card -->
+                    <div
+                        class="bg-gray-50 rounded-3xl p-8 border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                        <div class="flex items-start gap-6">
+                            <div
+                                class="w-14 h-14 bg-gradient-to-br from-light-orange to-dark-orange rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg shrink-0 group-hover:scale-110 transition-transform duration-300">
+                                <i class="bi bi-telephone-fill"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">Call Us</h3>
+                                <div class="space-y-1">
+                                    <p class="text-gray-600 font-medium hover:text-light-orange transition-colors">+91
+                                        XXX XXX XXXX</p>
+                                    <p class="text-gray-600 font-medium hover:text-light-orange transition-colors">+91
+                                        XXX XXX XXXX</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="contact-info-item">
-                        <div class="contact-icon">
-                            <i class="bi bi-clock-fill"></i>
+
+                    <!-- Email Card -->
+                    <div
+                        class="bg-gray-50 rounded-3xl p-8 border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                        <div class="flex items-start gap-6">
+                            <div
+                                class="w-14 h-14 bg-gradient-to-br from-light-orange to-dark-orange rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg shrink-0 group-hover:scale-110 transition-transform duration-300">
+                                <i class="bi bi-envelope-fill"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">Email Us</h3>
+                                <div class="space-y-1">
+                                    <p class="text-gray-600 font-medium hover:text-light-orange transition-colors">
+                                        info@arabiatraders.com</p>
+                                    <p class="text-gray-600 font-medium hover:text-light-orange transition-colors">
+                                        sales@arabiatraders.com</p>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <h5>Business Hours</h5>
-                            <p class="mb-0">Monday - Friday: 9:00 AM - 6:00 PM<br>Saturday: 9:00 AM - 2:00 PM</p>
+                    </div>
+
+                    <!-- Working Hours Card -->
+                    <div
+                        class="bg-gray-50 rounded-3xl p-8 border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group">
+                        <div class="flex items-start gap-6">
+                            <div
+                                class="w-14 h-14 bg-gradient-to-br from-light-orange to-dark-orange rounded-2xl flex items-center justify-center text-white text-2xl shadow-lg shrink-0 group-hover:scale-110 transition-transform duration-300">
+                                <i class="bi bi-clock-fill"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">Business Hours</h3>
+                                <p class="text-gray-600 leading-relaxed font-medium">Mon - Fri: 9:00 AM - 6:00 PM</p>
+                                <p class="text-gray-600 leading-relaxed font-medium">Sat: 9:00 AM - 2:00 PM</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -250,24 +197,51 @@
     </div>
 </section>
 
-<!-- Map Section (Optional) -->
-<section class="py-5" style="background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);">
-    <div class="container">
-        <div class="section-header text-center mb-5">
-            <h2 class="section-title">Find Us</h2>
-            <div class="title-underline mx-auto"></div>
+<!-- Styled Map Placeholder -->
+<section class="py-24 bg-gray-50">
+    <div class="container mx-auto px-4 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">Find Us</h2>
+            <div class="w-20 h-1.5 bg-light-orange mx-auto rounded-full"></div>
         </div>
-        <div class="row">
-            <div class="col-12">
-                <div style="height: 400px; background: var(--light-gray); border-radius: 20px; border: 2px solid rgba(153, 153, 153, 0.4); display: flex; align-items: center; justify-content: center;">
-                    <div class="text-center">
-                        <i class="bi bi-geo-alt" style="font-size: 4rem; color: var(--light-orange);"></i>
-                        <p class="mt-3">Map Integration Available</p>
-                    </div>
-                </div>
+        <div class="relative rounded-[2.5rem] overflow-hidden shadow-2xl h-[500px] border-4 border-white">
+            <div class="absolute inset-0 bg-gray-300 flex flex-col items-center justify-center text-gray-500">
+                <i class="bi bi-geo-alt-fill text-6xl text-light-orange mb-4 animate-bounce"></i>
+                <h3 class="text-2xl font-bold text-gray-700">Mumbai, Maharashtra, India</h3>
+                <p class="text-lg font-medium opacity-75 mt-2">Interactive Map Integration Ready</p>
             </div>
         </div>
     </div>
 </section>
+
+<!-- Form Inline Styling Overrides -->
+<style>
+    /* Styling Django Form Widgets with Tailwind-like properties */
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+        width: 100%;
+        padding: 1rem 1.25rem;
+        background-color: #F9FAFB;
+        border: 2px solid #F3F4F6;
+        border-radius: 1rem;
+        font-weight: 500;
+        color: #111827;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    input:focus,
+    textarea:focus {
+        outline: none;
+        border-color: #FFB86C;
+        background-color: #FFFFFF;
+        box-shadow: 0 0 0 4px rgba(255, 184, 108, 0.15);
+    }
+
+    textarea {
+        min-height: 160px;
+    }
+</style>
 {% endblock %}
-

@@ -1,355 +1,221 @@
 {% extends 'website/base.html' %}
 {% load static %}
 
-{% block title %}All Products - Arabia Traders Private Ltd.{% endblock %}
-
-{% block extra_css %}
-<style>
-    .products-hero {
-        background: linear-gradient(135deg, var(--light-gray) 0%, #ffffff 100%);
-        padding: 10rem 0 6rem;
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .products-hero::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: radial-gradient(circle at 50% 50%, rgba(255, 184, 108, 0.1) 0%, transparent 70%);
-        z-index: 1;
-    }
-    
-    .products-hero-content {
-        position: relative;
-        z-index: 2;
-    }
-    
-    .category-card {
-        background: white;
-        border-radius: 20px;
-        overflow: hidden;
-        border: 2px solid rgba(153, 153, 153, 0.4);
-        box-shadow: 
-            0 3px 10px rgba(0, 0, 0, 0.08),
-            0 10px 30px rgba(217, 217, 217, 0.25),
-            0 0 0 1px rgba(255, 255, 255, 0.5) inset,
-            0 -2px 0 rgba(0, 0, 0, 0.05) inset;
-        transition: all 0.4s ease;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        cursor: pointer;
-        text-decoration: none;
-        color: inherit;
-        position: relative;
-    }
-    
-    .category-card::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        border-radius: 20px;
-        padding: 2px;
-        background: linear-gradient(135deg, rgba(255, 184, 108, 0.1), rgba(217, 217, 217, 0.1));
-        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-        -webkit-mask-composite: xor;
-        mask-composite: exclude;
-        pointer-events: none;
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        z-index: 1;
-    }
-    
-    .category-card:hover {
-        transform: translateY(-18px) scale(1.03);
-        border-color: var(--light-orange);
-        border-width: 3px;
-        box-shadow: 
-            0 6px 20px rgba(255, 184, 108, 0.35),
-            0 15px 50px rgba(255, 184, 108, 0.25),
-            0 25px 80px rgba(217, 217, 217, 0.3),
-            0 0 0 1px rgba(255, 255, 255, 0.8) inset,
-            0 -3px 0 rgba(255, 184, 108, 0.25) inset;
-        text-decoration: none;
-        color: inherit;
-    }
-    
-    .category-card:hover::before {
-        opacity: 1;
-    }
-    
-    .category-image {
-        height: 300px;
-        position: relative;
-        overflow: hidden;
-    }
-    
-    .category-image.rice-bg {
-        background: linear-gradient(135deg, #f5e6d3, #e8d4b8);
-    }
-    
-    .category-image.spices-bg {
-        background: linear-gradient(135deg, #8B4513, #A0522D);
-    }
-    
-    .category-image.wood-bg {
-        background: linear-gradient(135deg, #6B4423, #8B4513);
-    }
-    
-    .category-image.agro-bg {
-        background: linear-gradient(135deg, #9BE7A5, #7DD87A);
-    }
-    
-    .category-content {
-        padding: 2.5rem;
-        flex-grow: 1;
-        display: flex;
-        flex-direction: column;
-    }
-    
-    .category-icon {
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-bottom: 1.5rem;
-        font-size: 2rem;
-        color: white;
-    }
-    
-    .category-icon.rice-icon {
-        background: linear-gradient(135deg, var(--light-orange), #ff9a4d);
-    }
-    
-    .category-icon.spices-icon {
-        background: linear-gradient(135deg, #8B4513, #A0522D);
-    }
-    
-    .category-icon.wood-icon {
-        background: linear-gradient(135deg, #6B4423, #8B4513);
-    }
-    
-    .category-icon.agro-icon {
-        background: linear-gradient(135deg, var(--light-green), #7DD87A);
-    }
-    
-    .category-title {
-        font-size: 1.8rem;
-        font-weight: 700;
-        margin-bottom: 1rem;
-        color: var(--dark-gray);
-    }
-    
-    .category-description {
-        color: #666;
-        line-height: 1.7;
-        margin-bottom: 1.5rem;
-        flex-grow: 1;
-    }
-    
-    .category-link {
-        color: var(--light-orange);
-        font-weight: 600;
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        transition: all 0.3s ease;
-    }
-    
-    .category-card:hover .category-link {
-        gap: 1rem;
-        color: #ff9a4d;
-    }
-    
-    .section-divider {
-        height: 2px;
-        background: linear-gradient(90deg, transparent, var(--light-gray), transparent);
-        margin: 4rem 0;
-    }
-</style>
-{% endblock %}
-
 {% block content %}
-<!-- Products Hero Section -->
-<section class="products-hero">
-    <div class="container products-hero-content">
-        <div class="row">
-            <div class="col-lg-8 mx-auto text-center">
-                <h1 class="display-3 fw-bold mb-4 fade-in-up">Our Complete Product Range</h1>
-                <p class="lead mb-4 fade-in-up delay-1">Premium quality products exported worldwide. Explore our diverse range of agricultural products, spices, and timber.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- All Products Categories -->
-<section class="py-5">
-    <div class="container">
-        <div class="row g-4 mb-5">
-            <!-- Rice Products -->
-            <div class="col-lg-6 col-md-6">
-                <a href="{% url 'website:rice' %}" class="category-card">
-                    <div class="category-image rice-bg" style="position: relative; overflow: hidden;">
-                        <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?w=1200&q=90&auto=format&fit=crop" alt="Premium Rice Products" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
-                    </div>
-                    <div class="category-content">
-                        <div class="category-icon rice-icon">
-                            <i class="bi bi-basket"></i>
-                        </div>
-                        <h3 class="category-title">Premium Rice Products</h3>
-                        <p class="category-description">
-                            Exported to over 50 countries worldwide. We specialize in premium quality rice varieties including Basmati, Jasmine, Brown, and Parboiled rice that meet international standards.
-                        </p>
-                        <span class="category-link">
-                            Explore Rice Products <i class="bi bi-arrow-right"></i>
-                        </span>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Spices Collection -->
-            <div class="col-lg-6 col-md-6">
-                <a href="{% url 'website:spices' %}" class="category-card">
-                    <div class="category-image spices-bg" style="position: relative; overflow: hidden;">
-                        <img src="https://images.unsplash.com/photo-1596040033229-a9821ebd058d?w=1200&q=90&auto=format&fit=crop" alt="Exotic Spices Collection" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
-                    </div>
-                    <div class="category-content">
-                        <div class="category-icon spices-icon">
-                            <i class="bi bi-flower1"></i>
-                        </div>
-                        <h3 class="category-title">Exotic Spices Collection</h3>
-                        <p class="category-description">
-                            Authentic flavors from the heart of India. Our premium spice collection includes Turmeric, Cardamom, Cumin, Coriander, Black Pepper, and Chili Powder.
-                        </p>
-                        <span class="category-link">
-                            Explore Spices <i class="bi bi-arrow-right"></i>
-                        </span>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Wood & Timber -->
-            <div class="col-lg-6 col-md-6">
-                <a href="{% url 'website:wood' %}" class="category-card">
-                    <div class="category-image wood-bg" style="position: relative; overflow: hidden;">
-                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&q=90&auto=format&fit=crop" alt="Wood & Timber Export" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
-                    </div>
-                    <div class="category-content">
-                        <div class="category-icon wood-icon">
-                            <i class="bi bi-tree"></i>
-                        </div>
-                        <h3 class="category-title">Wood & Timber Export</h3>
-                        <p class="category-description">
-                            Sustainable and premium quality timber. We export Teak Wood, Rosewood, Bamboo, and Pine Wood for furniture and construction purposes worldwide.
-                        </p>
-                        <span class="category-link">
-                            Explore Timber Products <i class="bi bi-arrow-right"></i>
-                        </span>
-                    </div>
-                </a>
-            </div>
-
-            <!-- Agro Products -->
-            <div class="col-lg-6 col-md-6">
-                <a href="{% url 'website:agro' %}" class="category-card">
-                    <div class="category-image agro-bg" style="position: relative; overflow: hidden;">
-                        <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1200&q=90&auto=format&fit=crop" alt="Agro Products" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0;">
-                    </div>
-                    <div class="category-content">
-                        <div class="category-icon agro-icon">
-                            <i class="bi bi-flower2"></i>
-                        </div>
-                        <h3 class="category-title">Agro Products</h3>
-                        <p class="category-description">
-                            High-quality agricultural products sourced directly from farms. We offer a wide range of fresh and processed agro products for international markets.
-                        </p>
-                        <span class="category-link">
-                            Explore Agro Products <i class="bi bi-arrow-right"></i>
-                        </span>
-                    </div>
-                </a>
-            </div>
+<!-- All Products Page - Modern Tailwind -->
+<section class="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-32 pb-20">
+    <div class="container mx-auto px-4 lg:px-8">
+        <!-- Page Header -->
+        <div class="text-center mb-16">
+            <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 mb-4">
+                Our Products
+            </h1>
+            <div class="w-24 h-1.5 bg-gradient-to-r from-light-orange to-dark-orange mx-auto rounded-full mb-6"></div>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Discover our complete range of premium quality products exported from India to the world
+            </p>
         </div>
 
-        <div class="section-divider"></div>
+        <!-- Products Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            <!-- Rice Products Card -->
+            <div
+                class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-3">
+                <div class="h-64 overflow-hidden relative">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-light-orange to-dark-orange">
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1516684732162-798a0062be99?w=800&q=90&auto=format&fit=crop"
+                        alt="Raw Rice Products"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div
+                        class="absolute top-4 right-4 bg-light-orange text-white px-4 py-2 rounded-full font-semibold text-sm">
+                        Origin: India
+                    </div>
+                </div>
+                <div class="p-8">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-3">Premium Raw Rice Products</h2>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        <strong>Origin: India</strong> | Raw rice exported to over 50 countries worldwide. We specialize
+                        in premium quality unprocessed rice varieties including Basmati, Jasmine, Brown, and Parboiled
+                        rice that meet international standards.
+                    </p>
+                    <a href="{% url 'website:rice' %}"
+                        class="group/link inline-flex items-center gap-2 text-light-orange hover:text-dark-orange font-semibold text-lg transition-colors">
+                        Explore Rice Products
+                        <i class="bi bi-arrow-right group-hover/link:translate-x-2 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
 
-        <!-- Why Choose Us Section -->
-        <div class="row mt-5">
-            <div class="col-lg-12 text-center mb-5">
-                <h2 class="section-title">Why Choose Our Products</h2>
-                <div class="title-underline mx-auto"></div>
-            </div>
-            <div class="col-md-6 col-lg-3 mb-4">
-                <div class="feature-card text-center">
-                    <div class="feature-image" style="height: 200px; overflow: hidden; border-radius: 15px 15px 0 0; margin: -1.5rem -1.5rem 1rem -1.5rem;">
-                        <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?w=800&q=90&auto=format&fit=crop" alt="Premium Quality" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+            <!-- Spices Card -->
+            <div
+                class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-3">
+                <div class="h-64 overflow-hidden relative">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-light-orange to-dark-orange">
                     </div>
-                    <div class="feature-icon">
-                        <i class="bi bi-award"></i>
+                    <img src="https://images.unsplash.com/photo-1615485500834-bc10199bc7c5?w=800&q=90&auto=format&fit=crop"
+                        alt="Raw Spices"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div
+                        class="absolute top-4 right-4 bg-light-orange text-white px-4 py-2 rounded-full font-semibold text-sm">
+                        Origin: India
                     </div>
-                    <h4>Premium Quality</h4>
-                    <p>Rigorous quality control ensures only the finest products reach our clients.</p>
+                </div>
+                <div class="p-8">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-3">Raw Spices Collection</h2>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        <strong>Origin: India</strong> | Authentic raw spices from the heart of India. Our premium
+                        unprocessed spice collection includes Turmeric, Cardamom, Cumin, Coriander, Black Pepper, and
+                        Chili Powder.
+                    </p>
+                    <a href="{% url 'website:spices' %}"
+                        class="group/link inline-flex items-center gap-2 text-light-orange hover:text-dark-orange font-semibold text-lg transition-colors">
+                        Explore Spices
+                        <i class="bi bi-arrow-right group-hover/link:translate-x-2 transition-transform"></i>
+                    </a>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3 mb-4">
-                <div class="feature-card text-center">
-                    <div class="feature-image" style="height: 200px; overflow: hidden; border-radius: 15px 15px 0 0; margin: -1.5rem -1.5rem 1rem -1.5rem;">
-                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=90&auto=format&fit=crop" alt="Certified" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+
+            <!-- Plywood Card -->
+            <div
+                class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-3">
+                <div class="h-64 overflow-hidden relative">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-light-orange to-dark-orange">
                     </div>
-                    <div class="feature-icon">
-                        <i class="bi bi-shield-check"></i>
+                    <img src="https://images.unsplash.com/photo-1617104551722-3b2ccb57be2c?w=800&q=90&auto=format&fit=crop"
+                        alt="Plywood Sheets"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div
+                        class="absolute top-4 right-4 bg-light-orange text-white px-4 py-2 rounded-full font-semibold text-sm">
+                        Origin: India
                     </div>
-                    <h4>Certified</h4>
-                    <p>ISO 9001:2015 certified with industry-leading certifications and standards.</p>
+                </div>
+                <div class="p-8">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-3">Premium Plywood Sheets</h2>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        <strong>Origin: India</strong> | Quality plywood sheets in 4x4 and 2x2 sizes. Perfect for
+                        construction and building applications.
+                    </p>
+                    <a href="{% url 'website:plywood' %}"
+                        class="group/link inline-flex items-center gap-2 text-light-orange hover:text-dark-orange font-semibold text-lg transition-colors">
+                        Explore Plywood
+                        <i class="bi bi-arrow-right group-hover/link:translate-x-2 transition-transform"></i>
+                    </a>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3 mb-4">
-                <div class="feature-card text-center">
-                    <div class="feature-image" style="height: 200px; overflow: hidden; border-radius: 15px 15px 0 0; margin: -1.5rem -1.5rem 1rem -1.5rem;">
-                        <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=800&q=90&auto=format&fit=crop" alt="Global Reach" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+
+            <!-- Industrial Items Card -->
+            <div
+                class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-3">
+                <div class="h-64 overflow-hidden relative">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-light-orange to-dark-orange">
                     </div>
-                    <div class="feature-icon">
-                        <i class="bi bi-globe"></i>
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=90&auto=format&fit=crop"
+                        alt="Industrial Items"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div
+                        class="absolute top-4 right-4 bg-light-orange text-white px-4 py-2 rounded-full font-semibold text-sm">
+                        Global Supply
                     </div>
-                    <h4>Global Reach</h4>
-                    <p>Extensive network spanning across continents for seamless exports.</p>
+                </div>
+                <div class="p-8">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-3">Industrial Items & Machinery</h2>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Quality industrial equipment and machinery for manufacturing, construction, and various
+                        industrial applications. Reliable products backed by technical support.
+                    </p>
+                    <a href="{% url 'website:industrial' %}"
+                        class="group/link inline-flex items-center gap-2 text-light-orange hover:text-dark-orange font-semibold text-lg transition-colors">
+                        Explore Industrial Items
+                        <i class="bi bi-arrow-right group-hover/link:translate-x-2 transition-transform"></i>
+                    </a>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-3 mb-4">
-                <div class="feature-card text-center">
-                    <div class="feature-image" style="height: 200px; overflow: hidden; border-radius: 15px 15px 0 0; margin: -1.5rem -1.5rem 1rem -1.5rem;">
-                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=90&auto=format&fit=crop" alt="Reliable Logistics" class="img-fluid" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+
+            <!-- Safety Shoes Card -->
+            <div
+                class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-3">
+                <div class="h-64 overflow-hidden relative">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-light-orange to-dark-orange">
                     </div>
-                    <div class="feature-icon">
-                        <i class="bi bi-truck"></i>
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=90&auto=format&fit=crop"
+                        alt="Safety Shoes"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div
+                        class="absolute top-4 right-4 bg-light-orange text-white px-4 py-2 rounded-full font-semibold text-sm">
+                        Safety First
                     </div>
-                    <h4>Reliable Logistics</h4>
-                    <p>Efficient supply chain management for timely deliveries worldwide.</p>
+                </div>
+                <div class="p-8">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-3">Safety Shoes</h2>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Premium quality leather safety shoes designed for worker protection. Features include steel toe
+                        caps, slip-resistant soles, and compliance with international safety standards.
+                    </p>
+                    <a href="{% url 'website:safety_shoes' %}"
+                        class="group/link inline-flex items-center gap-2 text-light-orange hover:text-dark-orange font-semibold text-lg transition-colors">
+                        Explore Safety Shoes
+                        <i class="bi bi-arrow-right group-hover/link:translate-x-2 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why Choose Section -->
+        <div class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-12 text-white">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">Why Choose Our Products?</h2>
+                <div class="w-24 h-1.5 bg-gradient-to-r from-light-orange to-dark-orange mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-light-orange/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="bi bi-shield-check text-light-orange text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Premium Quality</h3>
+                    <p class="text-gray-300">Certified products meeting international standards</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-light-orange/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="bi bi-globe text-light-orange text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Global Reach</h3>
+                    <p class="text-gray-300">Exporting to 50+ countries worldwide</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-light-orange/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="bi bi-truck text-light-orange text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Reliable Logistics</h3>
+                    <p class="text-gray-300">On-time delivery with careful packaging</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-light-orange/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="bi bi-headset text-light-orange text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">24/7 Support</h3>
+                    <p class="text-gray-300">Dedicated customer service team</p>
                 </div>
             </div>
         </div>
 
         <!-- CTA Section -->
-        <div class="row mt-5">
-            <div class="col-lg-12">
-                <div class="text-center p-5" style="background: linear-gradient(135deg, var(--light-gray), #ffffff); border-radius: 20px;">
-                    <h2 class="display-5 fw-bold mb-4">Ready to Place an Order?</h2>
-                    <p class="lead mb-4">Contact us today for competitive pricing and bulk order inquiries.</p>
-                    <a href="{% url 'website:contact' %}" class="btn btn-primary-custom me-3">Get Quote</a>
-                    <a href="{% url 'website:home' %}" class="btn btn-secondary-custom">Back to Home</a>
-                </div>
-            </div>
+        <div class="text-center mt-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Ready to Partner With Us?</h2>
+            <p class="text-xl text-gray-600 mb-8">Get in touch for quotes and bulk orders</p>
+            <a href="{% url 'website:contact' %}"
+                class="bg-gradient-to-r from-light-orange to-dark-orange text-white px-10 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 inline-block">
+                Contact Us Today
+            </a>
         </div>
     </div>
 </section>
 {% endblock %}
-

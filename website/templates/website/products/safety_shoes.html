@@ -1,0 +1,173 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Safety Shoes Page - Modern Tailwind -->
+<section class="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-32 pb-20">
+    <div class="container mx-auto px-4 lg:px-8">
+        <!-- Hero Section -->
+        <div class="text-center mb-16">
+            <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 mb-4">
+                Safety Shoes
+            </h1>
+            <div class="w-24 h-1.5 bg-gradient-to-r from-light-orange to-dark-orange mx-auto rounded-full mb-6"></div>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-4">
+                Premium quality leather safety shoes designed for worker protection. Features include steel toe caps,
+                slip-resistant soles, and compliance with international safety standards.
+            </p>
+            <a href="{% url 'website:contact' %}"
+                class="bg-gradient-to-r from-light-orange to-dark-orange text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 inline-block">
+                Request Quote
+            </a>
+        </div>
+
+        <!-- Product Range -->
+        <div class="mb-20">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">Our Safety Shoe Range</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Steel Toe -->
+                <div
+                    class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=90&auto=format&fit=crop"
+                            alt="Steel Toe Safety Shoes"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Steel Toe Boots</h3>
+                        <p class="text-gray-600 text-sm">Maximum protection with steel toe caps for heavy-duty work
+                            environments.</p>
+                    </div>
+                </div>
+
+                <!-- Low-Cut -->
+                <div
+                    class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1608231387042-66d1773070a5?w=800&q=90&auto=format&fit=crop"
+                            alt="Low-Cut Safety Shoes"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Low-Cut Safety Shoes</h3>
+                        <p class="text-gray-600 text-sm">Comfortable daily wear with essential toe protection and
+                            flexibility.</p>
+                    </div>
+                </div>
+
+                <!-- Composite Toe -->
+                <div
+                    class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=800&q=90&auto=format&fit=crop"
+                            alt="Composite Toe Shoes"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Composite Toe</h3>
+                        <p class="text-gray-600 text-sm">Lightweight non-metal protection ideal for electrical work
+                            environments.</p>
+                    </div>
+                </div>
+
+                <!-- Waterproof -->
+                <div
+                    class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1603487742131-4160ec999306?w=800&q=90&auto=format&fit=crop"
+                            alt="Waterproof Safety Boots"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Waterproof Boots</h3>
+                        <p class="text-gray-600 text-sm">Weather-resistant protection for outdoor and wet working
+                            conditions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Features & Compliance -->
+        <div class="bg-white rounded-3xl p-12 shadow-lg mb-16">
+            <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center">Features & Compliance</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-2xl font-semibold text-light-orange mb-4">Safety Features</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start gap-3">
+                            <i class="bi bi-shield-fill-check text-light-orange text-xl mt-1"></i>
+                            <span><strong>Toe Protection:</strong> Steel, composite, or aluminum toe caps</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="bi bi-shield-fill-check text-light-orange text-xl mt-1"></i>
+                            <span><strong>Slip Resistance:</strong> Non-slip rubber outsoles</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="bi bi-shield-fill-check text-light-orange text-xl mt-1"></i>
+                            <span><strong>Puncture Resistance:</strong> Special insole protection</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="bi bi-shield-fill-check text-light-orange text-xl mt-1"></i>
+                            <span><strong>Electrical Hazard:</strong> EH-rated options available</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold text-light-orange mb-4">Standards Compliance</h3>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start gap-3">
+                            <i class="bi bi-award-fill text-light-orange text-xl mt-1"></i>
+                            <span><strong>ASTM F2413:</strong> American safety standards</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="bi bi-award-fill text-light-orange text-xl mt-1"></i>
+                            <span><strong>EN ISO 20345:</strong> European safety standards</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="bi bi-award-fill text-light-orange text-xl mt-1"></i>
+                            <span><strong>IS 15298:</strong> Indian safety standards</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="bi bi-award-fill text-light-orange text-xl mt-1"></i>
+                            <span><strong>CE Certified:</strong> European conformity</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Industries Served -->
+        <div class="mb-16">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-8">Industries We Serve</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-2xl shadow-md text-center hover:shadow-lg transition-shadow">
+                    <i class="bi bi-building text-light-orange text-4xl mb-3"></i>
+                    <h4 class="font-semibold">Construction</h4>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-md text-center hover:shadow-lg transition-shadow">
+                    <i class="bi bi-gear-fill text-light-orange text-4xl mb-3"></i>
+                    <h4 class="font-semibold">Manufacturing</h4>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-md text-center hover:shadow-lg transition-shadow">
+                    <i class="bi bi-box-seam text-light-orange text-4xl mb-3"></i>
+                    <h4 class="font-semibold">Warehousing</h4>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-md text-center hover:shadow-lg transition-shadow">
+                    <i class="bi bi-minecart text-light-orange text-4xl mb-3"></i>
+                    <h4 class="font-semibold">Mining</h4>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="text-center bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-12 text-white">
+            <h2 class="text-4xl font-bold mb-4">Protect Your Workforce</h2>
+            <p class="text-xl text-gray-300 mb-8">Order bulk safety shoes for your organization</p>
+            <a href="{% url 'website:contact' %}"
+                class="bg-gradient-to-r from-light-orange to-dark-orange text-white px-10 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 inline-block">
+                Get Bulk Quote
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

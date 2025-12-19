@@ -15,13 +15,17 @@ def spices(request):
     """Spices products page"""
     return render(request, 'website/products/spices.html')
 
-def wood(request):
-    """Wood & Timber products page"""
-    return render(request, 'website/products/wood.html')
+def plywood(request):
+    """Plywood products page"""
+    return render(request, 'website/products/plywood.html')
 
-def agro(request):
-    """Agro products page"""
-    return render(request, 'website/products/agro.html')
+def industrial(request):
+    """Industrial items page"""
+    return render(request, 'website/products/industrial.html')
+
+def safety_shoes(request):
+    """Safety shoes page"""
+    return render(request, 'website/products/safety_shoes.html')
 
 def all_products(request):
     """All products page showing all categories"""

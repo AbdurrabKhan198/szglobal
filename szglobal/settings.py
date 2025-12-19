@@ -25,7 +25,20 @@ SECRET_KEY = 'django-insecure-75$*po0!zvv7o66x1t#h=c1-exw-4&#*wa66i$+56(4trtuywe
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = [
+    'localhost', 
+    '127.0.0.1',
+    '68.183.92.148',  # DigitalOcean Droplet IP
+    'szglobalarabia.com',
+    'www.szglobalarabia.com',
+]
+
+# CSRF Trusted Origins for production
+CSRF_TRUSTED_ORIGINS = [
+    'https://szglobalarabia.com',
+    'https://www.szglobalarabia.com',
+    'http://68.183.92.148',
+]
 
 # Development settings - disable HTTPS redirects
 SECURE_SSL_REDIRECT = False

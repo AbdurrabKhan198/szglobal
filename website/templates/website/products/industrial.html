@@ -1,0 +1,161 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Industrial Items Page - Modern Tailwind -->
+<section class="min-h-screen bg-gradient-to-b from-gray-50 to-white pt-32 pb-20">
+    <div class="container mx-auto px-4 lg:px-8">
+        <!-- Hero Section -->
+        <div class="text-center mb-16">
+            <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 mb-4">
+                Industrial Items & Machinery
+            </h1>
+            <div class="w-24 h-1.5 bg-gradient-to-r from-light-orange to-dark-orange mx-auto rounded-full mb-6"></div>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-4">
+                Quality industrial equipment and machinery for manufacturing, construction, and various industrial
+                applications. Reliable products backed by technical support.
+            </p>
+            <a href="{% url 'website:contact' %}"
+                class="bg-gradient-to-r from-light-orange to-dark-orange text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 inline-block">
+                Request Quote
+            </a>
+        </div>
+
+        <!-- Product Categories -->
+        <div class="mb-20">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">Product Categories</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Manufacturing Machinery -->
+                <div
+                    class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=90&auto=format&fit=crop"
+                            alt="Manufacturing Machinery"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Manufacturing Machinery</h3>
+                        <p class="text-gray-600 mb-4">High-performance machinery for production lines, packaging, and
+                            automated manufacturing processes.</p>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-center gap-2"><i
+                                    class="bi bi-check-circle-fill text-light-orange"></i> CNC Machines</li>
+                            <li class="flex items-center gap-2"><i
+                                    class="bi bi-check-circle-fill text-light-orange"></i> Packaging Equipment</li>
+                            <li class="flex items-center gap-2"><i
+                                    class="bi bi-check-circle-fill text-light-orange"></i> Conveyor Systems</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Construction Equipment -->
+                <div
+                    class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&q=90&auto=format&fit=crop"
+                            alt="Construction Equipment"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Construction Equipment</h3>
+                        <p class="text-gray-600 mb-4">Heavy-duty equipment for construction sites, infrastructure
+                            projects, and building applications.</p>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-center gap-2"><i
+                                    class="bi bi-check-circle-fill text-light-orange"></i> Excavators</li>
+                            <li class="flex items-center gap-2"><i
+                                    class="bi bi-check-circle-fill text-light-orange"></i> Concrete Mixers</li>
+                            <li class="flex items-center gap-2"><i
+                                    class="bi bi-check-circle-fill text-light-orange"></i> Scaffolding</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Power Tools -->
+                <div
+                    class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=800&q=90&auto=format&fit=crop"
+                            alt="Power Tools"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Power Tools</h3>
+                        <p class="text-gray-600 mb-4">Professional-grade power tools for industrial and construction
+                            applications.</p>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-center gap-2"><i
+                                    class="bi bi-check-circle-fill text-light-orange"></i> Drills & Drivers</li>
+                            <li class="flex items-center gap-2"><i
+                                    class="bi bi-check-circle-fill text-light-orange"></i> Grinders & Sanders</li>
+                            <li class="flex items-center gap-2"><i
+                                    class="bi bi-check-circle-fill text-light-orange"></i> Cutting Tools</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Material Handling -->
+                <div
+                    class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    <div class="h-64 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&q=90&auto=format&fit=crop"
+                            alt="Material Handling Equipment"
+                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold text-gray-900 mb-3">Material Handling Equipment</h3>
+                        <p class="text-gray-600 mb-4">Efficient equipment for moving, storing, and managing materials in
+                            warehouses and factories.</p>
+                        <ul class="space-y-2 text-gray-700">
+                            <li class="flex items-center gap-2"><i
+                                    class="bi bi-check-circle-fill text-light-orange"></i> Forklifts</li>
+                            <li class="flex items-center gap-2"><i
+                                    class="bi bi-check-circle-fill text-light-orange"></i> Pallet Jacks</li>
+                            <li class="flex items-center gap-2"><i
+                                    class="bi bi-check-circle-fill text-light-orange"></i> Cranes & Hoists</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why Choose Us -->
+        <div class="bg-white rounded-3xl p-12 shadow-lg mb-16">
+            <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center">Why Choose Our Industrial Products?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-light-orange/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="bi bi-shield-check text-light-orange text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Quality Assured</h3>
+                    <p class="text-gray-600">All products meet international quality and safety standards</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-light-orange/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="bi bi-headset text-light-orange text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Technical Support</h3>
+                    <p class="text-gray-600">Expert assistance and after-sales service available</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-light-orange/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="bi bi-truck text-light-orange text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Global Shipping</h3>
+                    <p class="text-gray-600">Worldwide delivery with secure packaging</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="text-center bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-12 text-white">
+            <h2 class="text-4xl font-bold mb-4">Need Industrial Equipment?</h2>
+            <p class="text-xl text-gray-300 mb-8">Contact us for product catalogs and pricing</p>
+            <a href="{% url 'website:contact' %}"
+                class="bg-gradient-to-r from-light-orange to-dark-orange text-white px-10 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 inline-block">
+                Request Catalog
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}
