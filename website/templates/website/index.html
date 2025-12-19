@@ -2,57 +2,153 @@
 {% load static %}
 
 {% block content %}
-<!-- Hero Section - Modern Tailwind -->
-<section id="home"
-    class="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-100 pt-20">
-    <!-- Animated Background -->
+<!-- Hero Section - Premium Design -->
+<section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <!-- Animated Gradient Background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900"></div>
+
+    <!-- Animated Particles/Orbs -->
     <div class="absolute inset-0 overflow-hidden">
-        <div class="absolute top-0 left-0 w-96 h-96 bg-light-orange/10 rounded-full filter blur-3xl animate-pulse">
+        <div class="absolute top-20 left-10 w-72 h-72 bg-amber-500/20 rounded-full filter blur-[100px] animate-pulse">
         </div>
-        <div class="absolute bottom-0 right-0 w-96 h-96 bg-light-gray/20 rounded-full filter blur-3xl animate-pulse"
+        <div class="absolute top-40 right-20 w-96 h-96 bg-orange-500/15 rounded-full filter blur-[120px] animate-pulse"
             style="animation-delay: 1s;"></div>
+        <div class="absolute bottom-20 left-1/3 w-80 h-80 bg-yellow-500/10 rounded-full filter blur-[100px] animate-pulse"
+            style="animation-delay: 2s;"></div>
+        <div class="absolute bottom-40 right-10 w-64 h-64 bg-amber-400/20 rounded-full filter blur-[80px] animate-pulse"
+            style="animation-delay: 0.5s;"></div>
     </div>
 
-    <div class="container mx-auto px-4 lg:px-8 relative z-10">
-        <div class="max-w-5xl mx-auto text-center">
-            <!-- Logo -->
-            <div class="mb-8 animate-fade-in-down">
-                <img src="{% static 'website/images/logo.png' %}" alt="Arabia Traders Logo"
-                    class="w-48 h-auto mx-auto hover:scale-110 transition-transform duration-300">
-            </div>
+    <!-- Floating Grid Pattern -->
+    <div class="absolute inset-0 opacity-10">
+        <div class="absolute inset-0"
+            style="background-image: linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px); background-size: 50px 50px;">
+        </div>
+    </div>
 
-            <!-- Main Title -->
-            <h1
-                class="text-5xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 mb-6 leading-tight animate-fade-in-up">
-                Delivering Quality<br>
-                <span class="bg-gradient-to-r from-light-orange to-dark-orange bg-clip-text text-transparent">From India
-                    to the World</span>
-            </h1>
+    <div class="container mx-auto px-4 lg:px-8 relative z-10 pt-24">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Left Content -->
+                <div class="text-left">
+                    <!-- Badge -->
+                    <div
+                        class="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500/20 to-orange-500/20 backdrop-blur-sm border border-amber-500/30 rounded-full px-4 py-2 mb-8 animate-fade-in-down">
+                        <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                        <span class="text-amber-200 text-sm font-medium">Trusted Global Exporter Since 2010</span>
+                    </div>
 
-            <!-- Subtitle -->
-            <p class="text-xl md:text-2xl text-gray-600 mb-10 animate-fade-in-up animation-delay-200">
-                Premium Raw Rice, Raw Spices & Plywood Sheets
-            </p>
+                    <!-- Main Title -->
+                    <h1
+                        class="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-6 leading-[1.1] animate-fade-in-up">
+                        Premium Quality
+                        <span
+                            class="block bg-gradient-to-r from-amber-400 via-orange-400 to-yellow-400 bg-clip-text text-transparent">
+                            From India
+                        </span>
+                        <span class="block text-4xl md:text-5xl lg:text-6xl font-bold text-slate-300 mt-2">
+                            To The World
+                        </span>
+                    </h1>
 
-            <!-- CTA Buttons -->
-            <div
-                class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up animation-delay-400">
-                <a href="#products"
-                    class="bg-gradient-to-r from-light-orange to-dark-orange text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 inline-block w-full sm:w-auto">
-                    Explore Products
-                </a>
-                <a href="{% url 'website:contact' %}"
-                    class="bg-white border-2 border-gray-300 text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg hover:border-light-orange hover:text-light-orange hover:-translate-y-1 transition-all duration-300 inline-block w-full sm:w-auto">
-                    Get In Touch
-                </a>
+                    <!-- Subtitle -->
+                    <p class="text-xl md:text-2xl text-slate-400 mb-10 max-w-lg animate-fade-in-up animation-delay-200">
+                        Exporting finest <span class="text-amber-400 font-semibold">Raw Rice</span>, <span
+                            class="text-orange-400 font-semibold">Spices</span> & <span
+                            class="text-yellow-400 font-semibold">Plywood</span> to 50+ countries worldwide.
+                    </p>
+
+                    <!-- Stats Row -->
+                    <div class="flex flex-wrap gap-8 mb-10 animate-fade-in-up animation-delay-300">
+                        <div class="text-center">
+                            <div class="text-4xl font-black text-amber-400">50+</div>
+                            <div class="text-slate-400 text-sm">Countries</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-black text-orange-400">15+</div>
+                            <div class="text-slate-400 text-sm">Years Experience</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-4xl font-black text-yellow-400">1000+</div>
+                            <div class="text-slate-400 text-sm">Happy Clients</div>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 animate-fade-in-up animation-delay-400">
+                        <a href="#products"
+                            class="group relative inline-flex items-center justify-center gap-2 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500 bg-[length:200%_100%] text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-lg shadow-amber-500/30 hover:shadow-xl hover:shadow-amber-500/40 hover:-translate-y-1 hover:bg-right transition-all duration-500">
+                            <span>Explore Products</span>
+                            <i class="bi bi-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                        <a href="{% url 'website:contact' %}"
+                            class="group inline-flex items-center justify-center gap-2 bg-white/5 backdrop-blur-sm border-2 border-white/20 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-white/10 hover:border-amber-400/50 hover:-translate-y-1 transition-all duration-300">
+                            <i class="bi bi-telephone-fill text-amber-400"></i>
+                            <span>Get In Touch</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Side - Product Showcase -->
+                <div class="relative hidden lg:block animate-fade-in-right">
+                    <!-- Glowing Ring -->
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-[400px] h-[400px] rounded-full border-2 border-amber-500/20 animate-spin-slow">
+                        </div>
+                        <div
+                            class="absolute w-[320px] h-[320px] rounded-full border border-orange-500/30 animate-spin-reverse">
+                        </div>
+                    </div>
+
+                    <!-- Product Cards floating -->
+                    <div class="relative w-full h-[500px]">
+                        <!-- Rice Card -->
+                        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-48 animate-float">
+                            <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-4 shadow-2xl">
+                                <img src="https://images.unsplash.com/photo-1516684732162-798a0062be99?w=400&q=90"
+                                    alt="Rice" class="w-full h-32 object-cover rounded-2xl mb-3">
+                                <h4 class="text-white font-bold text-center">Premium Rice</h4>
+                            </div>
+                        </div>
+
+                        <!-- Spices Card -->
+                        <div class="absolute top-1/3 left-0 w-44 animate-float-delayed">
+                            <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-4 shadow-2xl">
+                                <img src="https://images.unsplash.com/photo-1596040033229-a0b4a1ab4fd2?w=400&q=90"
+                                    alt="Spices" class="w-full h-28 object-cover rounded-2xl mb-3">
+                                <h4 class="text-white font-bold text-center">Raw Spices</h4>
+                            </div>
+                        </div>
+
+                        <!-- Plywood Card -->
+                        <div class="absolute top-1/3 right-0 w-44 animate-float-delayed-2">
+                            <div class="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-4 shadow-2xl">
+                                <img src="https://images.unsplash.com/photo-1617104551722-3b2ccb57be2c?w=400&q=90"
+                                    alt="Plywood" class="w-full h-28 object-cover rounded-2xl mb-3">
+                                <h4 class="text-white font-bold text-center">Plywood</h4>
+                            </div>
+                        </div>
+
+                        <!-- Center Logo -->
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                            <div
+                                class="w-32 h-32 bg-gradient-to-br from-amber-500 to-orange-600 rounded-3xl flex items-center justify-center shadow-2xl shadow-amber-500/50 animate-pulse-slow">
+                                <span class="text-4xl font-black text-white">SZ</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- Scroll Indicator -->
     <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div class="w-6 h-10 border-2 border-light-orange rounded-full flex justify-center">
-            <div class="w-1 h-3 bg-light-orange rounded-full mt-2 animate-scroll"></div>
+        <div class="flex flex-col items-center gap-2">
+            <span class="text-slate-500 text-sm">Scroll to explore</span>
+            <div class="w-6 h-10 border-2 border-amber-500/50 rounded-full flex justify-center">
+                <div class="w-1 h-3 bg-amber-500 rounded-full mt-2 animate-scroll"></div>
+            </div>
         </div>
     </div>
 </section>
@@ -60,18 +156,24 @@
 <!-- Products Section Wrapper -->
 <section id="products" class="scroll-mt-20">
     <!-- Rice Products Section -->
-    <section id="rice-products" class="py-20 bg-gradient-to-b from-white to-gray-50">
-        <div class="container mx-auto px-4 lg:px-8">
+    <section id="rice-products" class="py-24 bg-gradient-to-b from-slate-50 to-white relative overflow-hidden">
+        <!-- Decorative Elements -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-amber-100/50 rounded-full filter blur-[100px]"></div>
+        <div class="absolute bottom-0 left-0 w-72 h-72 bg-orange-100/50 rounded-full filter blur-[80px]"></div>
+
+        <div class="container mx-auto px-4 lg:px-8 relative z-10">
             <!-- Section Header -->
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
-                    Premium Raw Rice Products
+                <span
+                    class="inline-block bg-gradient-to-r from-amber-500 to-orange-500 text-white text-sm font-bold px-4 py-2 rounded-full mb-4">🌾
+                    RICE COLLECTION</span>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-4">
+                    Premium Raw <span
+                        class="bg-gradient-to-r from-amber-500 to-orange-500 bg-clip-text text-transparent">Rice</span>
                 </h2>
-                <div class="w-24 h-1.5 bg-gradient-to-r from-light-orange to-dark-orange mx-auto rounded-full mb-4">
-                </div>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                    <span class="text-light-orange font-semibold">Origin: India</span> | Raw rice exported to over 50
-                    countries worldwide
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                    Sourced directly from the fertile lands of India, our rice meets the highest international quality
+                    standards.
                 </p>
             </div>
 
@@ -79,96 +181,120 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Rice Card 1 -->
                 <div
-                    class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    class="group relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border border-slate-100">
+                    <div class="absolute top-4 left-4 z-10">
+                        <span
+                            class="bg-gradient-to-r from-amber-500 to-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full">BESTSELLER</span>
+                    </div>
                     <div class="h-64 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1516684732162-798a0062be99?w=800&q=90&auto=format&fit=crop"
                             alt="Raw Basmati Rice"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Raw Basmati Rice</h3>
-                        <p class="text-gray-600 mb-4">Premium unprocessed long-grain aromatic rice from India</p>
+                    <div class="p-6 bg-gradient-to-b from-white to-amber-50/30">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Raw Basmati Rice</h3>
+                        <p class="text-slate-600 mb-4">Premium long-grain aromatic rice, perfect for biryanis and pulaos
+                        </p>
                         <a href="{% url 'website:rice' %}"
-                            class="text-light-orange font-semibold hover:text-dark-orange transition-colors inline-flex items-center gap-2 group/link">
+                            class="inline-flex items-center gap-2 text-amber-600 font-semibold hover:text-amber-700 group/link">
                             Learn More
-                            <i class="bi bi-arrow-right group-hover/link:translate-x-1 transition-transform"></i>
+                            <i class="bi bi-arrow-right group-hover/link:translate-x-2 transition-transform"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- Rice Card 2 -->
                 <div
-                    class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    class="group relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border border-slate-100">
                     <div class="h-64 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1536304993881-ff6e9eefa2a6?w=800&q=90&auto=format&fit=crop"
                             alt="Raw Jasmine Rice"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Raw Jasmine Rice</h3>
-                        <p class="text-gray-600 mb-4">Unprocessed fragrant rice from India with delicate texture</p>
+                    <div class="p-6 bg-gradient-to-b from-white to-amber-50/30">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Raw Jasmine Rice</h3>
+                        <p class="text-slate-600 mb-4">Fragrant and delicate texture, ideal for Asian cuisines</p>
                         <a href="{% url 'website:rice' %}"
-                            class="text-light-orange font-semibold hover:text-dark-orange transition-colors inline-flex items-center gap-2 group/link">
+                            class="inline-flex items-center gap-2 text-amber-600 font-semibold hover:text-amber-700 group/link">
                             Learn More
-                            <i class="bi bi-arrow-right group-hover/link:translate-x-1 transition-transform"></i>
+                            <i class="bi bi-arrow-right group-hover/link:translate-x-2 transition-transform"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- Rice Card 3 -->
                 <div
-                    class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    class="group relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border border-slate-100">
+                    <div class="absolute top-4 left-4 z-10">
+                        <span class="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">ORGANIC</span>
+                    </div>
                     <div class="h-64 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=800&q=90&auto=format&fit=crop"
                             alt="Raw Brown Rice"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Raw Brown Rice</h3>
-                        <p class="text-gray-600 mb-4">Unpolished whole grain nutritious rice</p>
+                    <div class="p-6 bg-gradient-to-b from-white to-amber-50/30">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Raw Brown Rice</h3>
+                        <p class="text-slate-600 mb-4">Nutrient-rich whole grain rice for health-conscious consumers</p>
                         <a href="{% url 'website:rice' %}"
-                            class="text-light-orange font-semibold hover:text-dark-orange transition-colors inline-flex items-center gap-2 group/link">
+                            class="inline-flex items-center gap-2 text-amber-600 font-semibold hover:text-amber-700 group/link">
                             Learn More
-                            <i class="bi bi-arrow-right group-hover/link:translate-x-1 transition-transform"></i>
+                            <i class="bi bi-arrow-right group-hover/link:translate-x-2 transition-transform"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- Rice Card 4 -->
                 <div
-                    class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    class="group relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border border-slate-100">
                     <div class="h-64 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1598318070842-bd8dc06d21ce?w=800&q=90&auto=format&fit=crop"
                             alt="Raw Parboiled Rice"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     </div>
-                    <div class="p-6">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Raw Parboiled Rice</h3>
-                        <p class="text-gray-600 mb-4">Partially processed nutrient-rich rice</p>
+                    <div class="p-6 bg-gradient-to-b from-white to-amber-50/30">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-2">Raw Parboiled Rice</h3>
+                        <p class="text-slate-600 mb-4">Partially processed for better nutrient retention</p>
                         <a href="{% url 'website:rice' %}"
-                            class="text-light-orange font-semibold hover:text-dark-orange transition-colors inline-flex items-center gap-2 group/link">
+                            class="inline-flex items-center gap-2 text-amber-600 font-semibold hover:text-amber-700 group/link">
                             Learn More
-                            <i class="bi bi-arrow-right group-hover/link:translate-x-1 transition-transform"></i>
+                            <i class="bi bi-arrow-right group-hover/link:translate-x-2 transition-transform"></i>
                         </a>
                     </div>
                 </div>
             </div>
+
+            <!-- View All Button -->
+            <div class="text-center mt-12">
+                <a href="{% url 'website:rice' %}"
+                    class="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-orange-500 text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-lg shadow-amber-500/30 hover:shadow-xl hover:shadow-amber-500/40 hover:-translate-y-1 transition-all duration-300">
+                    View All Rice Products
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- Spices Section -->
-    <section id="spices-products" class="py-20 bg-gradient-to-b from-gray-50 to-white">
-        <div class="container mx-auto px-4 lg:px-8">
+    <!-- Spices Section - Dark Theme -->
+    <section id="spices-products"
+        class="py-24 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 relative overflow-hidden">
+        <!-- Decorative Elements -->
+        <div class="absolute top-20 left-20 w-80 h-80 bg-red-500/10 rounded-full filter blur-[100px]"></div>
+        <div class="absolute bottom-20 right-20 w-96 h-96 bg-orange-500/10 rounded-full filter blur-[120px]"></div>
+
+        <div class="container mx-auto px-4 lg:px-8 relative z-10">
             <!-- Section Header -->
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
-                    Raw Spices Collection
+                <span
+                    class="inline-block bg-gradient-to-r from-red-500 to-orange-500 text-white text-sm font-bold px-4 py-2 rounded-full mb-4">🌶️
+                    SPICES COLLECTION</span>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4">
+                    Authentic Indian <span
+                        class="bg-gradient-to-r from-red-400 to-orange-400 bg-clip-text text-transparent">Spices</span>
                 </h2>
-                <div class="w-24 h-1.5 bg-gradient-to-r from-light-orange to-dark-orange mx-auto rounded-full mb-4">
-                </div>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                    <span class="text-light-orange font-semibold">Origin: India</span> | Authentic raw spices from the
-                    heart of India
+                <p class="text-lg text-slate-400 max-w-2xl mx-auto">
+                    Experience the rich flavors and aromas of India with our premium raw spices, sourced from authentic
+                    farms.
                 </p>
             </div>
 
@@ -176,112 +302,253 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Turmeric -->
                 <div
-                    class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    class="group relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden hover:border-amber-500/50 transition-all duration-500 hover:-translate-y-3">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-b from-transparent to-amber-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
                     <div class="h-72 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1615485500834-bc10199bc7c5?w=800&q=90&auto=format&fit=crop"
                             alt="Raw Turmeric"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Raw Turmeric</h3>
-                        <p class="text-gray-600">Unprocessed golden spice with natural health benefits</p>
+                    <div class="p-6 text-center relative z-10">
+                        <h3 class="text-2xl font-bold text-white mb-2">Raw Turmeric</h3>
+                        <p class="text-slate-400">Golden spice with powerful health benefits and rich color</p>
                     </div>
                 </div>
 
                 <!-- Cardamom -->
                 <div
-                    class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    class="group relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden hover:border-green-500/50 transition-all duration-500 hover:-translate-y-3">
+                    <div class="absolute top-4 right-4 z-10">
+                        <span
+                            class="bg-gradient-to-r from-green-500 to-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full">PREMIUM</span>
+                    </div>
+                    <div
+                        class="absolute inset-0 bg-gradient-to-b from-transparent to-green-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
                     <div class="h-72 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1596040033229-a0b4a1ab4fd2?w=800&q=90&auto=format&fit=crop"
                             alt="Cardamom"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Cardamom</h3>
-                        <p class="text-gray-600">Queen of spices with aromatic fragrance</p>
+                    <div class="p-6 text-center relative z-10">
+                        <h3 class="text-2xl font-bold text-white mb-2">Cardamom</h3>
+                        <p class="text-slate-400">Queen of spices with aromatic fragrance</p>
                     </div>
                 </div>
 
                 <!-- Cumin -->
                 <div
-                    class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
+                    class="group relative bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden hover:border-amber-500/50 transition-all duration-500 hover:-translate-y-3">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-b from-transparent to-amber-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
                     <div class="h-72 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1596040033229-a0b4a1ab4fd2?w=800&q=90&auto=format&fit=crop"
+                        <img src="https://images.unsplash.com/photo-1599909533986-96f108b58de7?w=800&q=90&auto=format&fit=crop"
                             alt="Cumin"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Cumin</h3>
-                        <p class="text-gray-600">Essential spice with warm flavor</p>
+                    <div class="p-6 text-center relative z-10">
+                        <h3 class="text-2xl font-bold text-white mb-2">Cumin Seeds</h3>
+                        <p class="text-slate-400">Essential spice with warm, earthy flavor</p>
                     </div>
                 </div>
             </div>
 
+            <!-- View All Button -->
             <div class="text-center mt-12">
                 <a href="{% url 'website:spices' %}"
-                    class="bg-gradient-to-r from-light-orange to-dark-orange text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 inline-block">
-                    View All Spices
+                    class="inline-flex items-center gap-2 bg-gradient-to-r from-red-500 to-orange-500 text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-lg shadow-red-500/30 hover:shadow-xl hover:shadow-red-500/40 hover:-translate-y-1 transition-all duration-300">
+                    Explore All Spices
+                    <i class="bi bi-arrow-right"></i>
                 </a>
             </div>
         </div>
     </section>
 
     <!-- Plywood Section -->
-    <section id="wood-products" class="py-20 bg-gradient-to-b from-white to-gray-50">
-        <div class="container mx-auto px-4 lg:px-8">
+    <section id="wood-products" class="py-24 bg-gradient-to-b from-amber-50 to-white relative overflow-hidden">
+        <!-- Wood Texture Pattern -->
+        <div class="absolute inset-0 opacity-5" style="background-image: url('data:image/svg+xml,<svg xmlns=\"
+            http://www.w3.org/2000/svg\" width=\"100\" height=\"100\">
+            <rect fill=\"%23000\" width=\"100\" height=\"100\" />
+            <path d=\"M0 50h100M50 0v100\" stroke=\"%23fff\" stroke-width=\"1\" /></svg>');">
+        </div>
+
+        <div class="container mx-auto px-4 lg:px-8 relative z-10">
             <!-- Section Header -->
             <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
-                    Premium Plywood Sheets
+                <span
+                    class="inline-block bg-gradient-to-r from-amber-600 to-amber-800 text-white text-sm font-bold px-4 py-2 rounded-full mb-4">🪵
+                    PLYWOOD COLLECTION</span>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-slate-900 mb-4">
+                    Quality <span
+                        class="bg-gradient-to-r from-amber-600 to-amber-800 bg-clip-text text-transparent">Plywood</span>
+                    Sheets
                 </h2>
-                <div class="w-24 h-1.5 bg-gradient-to-r from-light-orange to-dark-orange mx-auto rounded-full mb-4">
-                </div>
-                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-                    <span class="text-light-orange font-semibold">Origin: India</span> | Quality plywood sheets in 4x4
-                    and 2x2 sizes
+                <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                    Premium plywood sheets manufactured with precision, available in 4x4 and 2x2 feet sizes for all your
+                    construction needs.
                 </p>
             </div>
 
             <!-- Plywood Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
                 <!-- 4x4 Plywood -->
                 <div
-                    class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-                    <div class="h-64 overflow-hidden relative">
-                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-light-orange to-dark-orange">
-                        </div>
+                    class="group relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-2 border-amber-100">
+                    <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-amber-500 to-amber-700"></div>
+                    <div class="h-72 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1617104551722-3b2ccb57be2c?w=800&q=90&auto=format&fit=crop"
                             alt="4x4 Plywood"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     </div>
-                    <div class="p-8 text-center">
-                        <h3 class="text-3xl font-bold text-gray-900 mb-2">4x4 Plywood Sheets</h3>
-                        <p class="text-gray-600">Standard 4x4 feet plywood sheets</p>
+                    <div class="p-8 text-center bg-gradient-to-b from-white to-amber-50">
+                        <div
+                            class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-amber-500 to-amber-700 rounded-2xl mb-4 shadow-lg">
+                            <span class="text-white font-black text-xl">4×4</span>
+                        </div>
+                        <h3 class="text-3xl font-bold text-slate-900 mb-2">4×4 Feet Sheets</h3>
+                        <p class="text-slate-600 mb-4">Standard size plywood for large-scale projects</p>
+                        <a href="{% url 'website:plywood' %}"
+                            class="inline-flex items-center gap-2 text-amber-700 font-semibold hover:text-amber-800 group/link">
+                            View Details
+                            <i class="bi bi-arrow-right group-hover/link:translate-x-2 transition-transform"></i>
+                        </a>
                     </div>
                 </div>
 
                 <!-- 2x2 Plywood -->
                 <div
-                    class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-                    <div class="h-64 overflow-hidden relative">
-                        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-light-orange to-dark-orange">
-                        </div>
+                    class="group relative bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 border-2 border-amber-100">
+                    <div class="absolute top-0 left-0 w-full h-1.5 bg-gradient-to-r from-amber-600 to-amber-800"></div>
+                    <div class="h-72 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=800&q=90&auto=format&fit=crop"
                             alt="2x2 Plywood"
                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
                     </div>
-                    <div class="p-8 text-center">
-                        <h3 class="text-3xl font-bold text-gray-900 mb-2">2x2 Plywood Sheets</h3>
-                        <p class="text-gray-600">Compact 2x2 feet plywood sheets</p>
+                    <div class="p-8 text-center bg-gradient-to-b from-white to-amber-50">
+                        <div
+                            class="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-amber-600 to-amber-800 rounded-2xl mb-4 shadow-lg">
+                            <span class="text-white font-black text-xl">2×2</span>
+                        </div>
+                        <h3 class="text-3xl font-bold text-slate-900 mb-2">2×2 Feet Sheets</h3>
+                        <p class="text-slate-600 mb-4">Compact size for smaller projects and custom work</p>
+                        <a href="{% url 'website:plywood' %}"
+                            class="inline-flex items-center gap-2 text-amber-700 font-semibold hover:text-amber-800 group/link">
+                            View Details
+                            <i class="bi bi-arrow-right group-hover/link:translate-x-2 transition-transform"></i>
+                        </a>
                     </div>
                 </div>
             </div>
 
+            <!-- View All Button -->
             <div class="text-center mt-12">
                 <a href="{% url 'website:plywood' %}"
-                    class="bg-gradient-to-r from-light-orange to-dark-orange text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 inline-block">
+                    class="inline-flex items-center gap-2 bg-gradient-to-r from-amber-600 to-amber-800 text-white px-8 py-4 rounded-2xl font-bold text-lg shadow-lg shadow-amber-600/30 hover:shadow-xl hover:shadow-amber-600/40 hover:-translate-y-1 transition-all duration-300">
                     Explore Plywood Products
+                    <i class="bi bi-arrow-right"></i>
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-24 bg-gradient-to-b from-slate-900 to-slate-800 relative overflow-hidden">
+        <div class="absolute inset-0">
+            <div class="absolute top-0 left-1/4 w-96 h-96 bg-amber-500/5 rounded-full filter blur-[100px]"></div>
+            <div class="absolute bottom-0 right-1/4 w-80 h-80 bg-orange-500/5 rounded-full filter blur-[100px]"></div>
+        </div>
+
+        <div class="container mx-auto px-4 lg:px-8 relative z-10">
+            <div class="text-center mb-16">
+                <span
+                    class="inline-block bg-white/10 backdrop-blur-sm text-amber-400 text-sm font-bold px-4 py-2 rounded-full mb-4">WHY
+                    CHOOSE US</span>
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-black text-white mb-4">
+                    Your Trusted <span
+                        class="bg-gradient-to-r from-amber-400 to-orange-400 bg-clip-text text-transparent">Partner</span>
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div
+                    class="group text-center p-8 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl hover:bg-white/10 hover:border-amber-500/30 transition-all duration-500">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-amber-500 to-orange-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                        <i class="bi bi-globe text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Global Reach</h3>
+                    <p class="text-slate-400">Exporting to 50+ countries with reliable logistics</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div
+                    class="group text-center p-8 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl hover:bg-white/10 hover:border-amber-500/30 transition-all duration-500">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                        <i class="bi bi-patch-check text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Quality Certified</h3>
+                    <p class="text-slate-400">ISO certified products meeting international standards</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div
+                    class="group text-center p-8 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl hover:bg-white/10 hover:border-amber-500/30 transition-all duration-500">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                        <i class="bi bi-truck text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Fast Shipping</h3>
+                    <p class="text-slate-400">Timely delivery with real-time tracking</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div
+                    class="group text-center p-8 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl hover:bg-white/10 hover:border-amber-500/30 transition-all duration-500">
+                    <div
+                        class="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                        <i class="bi bi-headset text-3xl text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">24/7 Support</h3>
+                    <p class="text-slate-400">Round-the-clock customer assistance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml,<svg xmlns=\" http://www.w3.org/2000/svg\" viewBox=\"0
+            0 100 100\">
+            <circle cx=\"50\" cy=\"50\" r=\"1\" fill=\"white\" fill-opacity=\"0.1\" /></svg>')] bg-repeat"
+            style="background-size: 20px 20px;">
+        </div>
+
+        <div class="container mx-auto px-4 lg:px-8 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl md:text-5xl font-black text-white mb-6">
+                    Ready to Source Premium Products?
+                </h2>
+                <p class="text-xl text-white/90 mb-10">
+                    Contact us today for wholesale inquiries and competitive pricing
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="{% url 'website:contact' %}"
+                        class="inline-flex items-center justify-center gap-2 bg-white text-amber-600 px-8 py-4 rounded-2xl font-bold text-lg shadow-xl hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
+                        <i class="bi bi-envelope-fill"></i>
+                        Contact Us Now
+                    </a>
+                    <a href="{% url 'website:all_products' %}"
+                        class="inline-flex items-center justify-center gap-2 bg-transparent border-2 border-white text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-white/10 hover:-translate-y-1 transition-all duration-300">
+                        <i class="bi bi-box-seam"></i>
+                        View All Products
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -292,7 +559,7 @@
     @keyframes fade-in-down {
         from {
             opacity: 0;
-            transform: translateY(-20px);
+            transform: translateY(-30px);
         }
 
         to {
@@ -304,12 +571,24 @@
     @keyframes fade-in-up {
         from {
             opacity: 0;
-            transform: translateY(20px);
+            transform: translateY(30px);
         }
 
         to {
             opacity: 1;
             transform: translateY(0);
+        }
+    }
+
+    @keyframes fade-in-right {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
         }
     }
 
@@ -327,6 +606,76 @@
         }
     }
 
+    @keyframes float {
+
+        0%,
+        100% {
+            transform: translateY(0px);
+        }
+
+        50% {
+            transform: translateY(-20px);
+        }
+    }
+
+    @keyframes float-delayed {
+
+        0%,
+        100% {
+            transform: translateY(0px) rotate(-2deg);
+        }
+
+        50% {
+            transform: translateY(-15px) rotate(2deg);
+        }
+    }
+
+    @keyframes float-delayed-2 {
+
+        0%,
+        100% {
+            transform: translateY(0px) rotate(2deg);
+        }
+
+        50% {
+            transform: translateY(-18px) rotate(-2deg);
+        }
+    }
+
+    @keyframes spin-slow {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes spin-reverse {
+        from {
+            transform: rotate(360deg);
+        }
+
+        to {
+            transform: rotate(0deg);
+        }
+    }
+
+    @keyframes pulse-slow {
+
+        0%,
+        100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        50% {
+            opacity: 0.8;
+            transform: scale(1.05);
+        }
+    }
+
     .animate-fade-in-down {
         animation: fade-in-down 0.8s ease-out;
     }
@@ -335,18 +684,53 @@
         animation: fade-in-up 0.8s ease-out;
     }
 
+    .animate-fade-in-right {
+        animation: fade-in-right 1s ease-out;
+    }
+
+    .animate-scroll {
+        animation: scroll 2s ease-in-out infinite;
+    }
+
+    .animate-float {
+        animation: float 4s ease-in-out infinite;
+    }
+
+    .animate-float-delayed {
+        animation: float-delayed 5s ease-in-out infinite;
+        animation-delay: 0.5s;
+    }
+
+    .animate-float-delayed-2 {
+        animation: float-delayed-2 4.5s ease-in-out infinite;
+        animation-delay: 1s;
+    }
+
+    .animate-spin-slow {
+        animation: spin-slow 20s linear infinite;
+    }
+
+    .animate-spin-reverse {
+        animation: spin-reverse 15s linear infinite;
+    }
+
+    .animate-pulse-slow {
+        animation: pulse-slow 3s ease-in-out infinite;
+    }
+
     .animation-delay-200 {
         animation-delay: 0.2s;
+        animation-fill-mode: both;
+    }
+
+    .animation-delay-300 {
+        animation-delay: 0.3s;
         animation-fill-mode: both;
     }
 
     .animation-delay-400 {
         animation-delay: 0.4s;
         animation-fill-mode: both;
-    }
-
-    .animate-scroll {
-        animation: scroll 2s ease-in-out infinite;
     }
 </style>
 
