@@ -18,6 +18,8 @@ ALLOWED_HOSTS = [
     '68.183.92.148',
     'szglobalarabia.com',
     'www.szglobalarabia.com',
+    '127.0.0.1',
+    'localhost',
 ]
 
 # CSRF Trusted Origins
