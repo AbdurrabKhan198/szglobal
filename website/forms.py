@@ -1,10 +1,10 @@
 from django import forms
-from .models import Contact
+from .models import ContactEnquiry
 
 class ContactForm(forms.ModelForm):
     """Contact form"""
     class Meta:
-        model = Contact
+        model = ContactEnquiry
         fields = ['name', 'email', 'phone', 'subject', 'message']
         widgets = {
             'name': forms.TextInput(attrs={

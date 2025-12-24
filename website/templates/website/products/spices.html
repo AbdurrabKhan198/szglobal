@@ -8,12 +8,11 @@
         <!-- Hero Section -->
         <div class="text-center mb-16">
             <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 mb-4">
-                Raw Spices Collection
+                Premium Spices Collection
             </h1>
             <div class="w-24 h-1.5 bg-gradient-to-r from-light-orange to-dark-orange mx-auto rounded-full mb-6"></div>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-4">
-                <span class="text-light-orange font-semibold">Origin: India</span> | Authentic raw spices from the heart
-                of India. Premium quality unprocessed spices exported worldwide.
+                <span class="text-light-orange font-semibold">Origin: India</span> | Authentic premium spices sourced directly from Indian farms. Experience the rich flavors and aromas of India's finest spices.
             </p>
             <a href="{% url 'website:contact' %}"
                 class="bg-gradient-to-r from-light-orange to-dark-orange text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 inline-block">
@@ -21,144 +20,242 @@
             </a>
         </div>
 
-        <!-- Spice Range Section -->
-        <div class="mb-20">
-            <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">Our Spice Range from India</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Turmeric -->
-                <div
-                    class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-                    <div class="h-72 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1615485500834-bc10199bc7c5?w=800&q=90&auto=format&fit=crop"
-                            alt="Raw Turmeric"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                    </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Raw Turmeric</h3>
-                        <p class="text-gray-600">Golden spice with natural health benefits. Unprocessed and pure.</p>
-                    </div>
+        <!-- Cinnamon - Detailed Section -->
+        <div class="mb-20 bg-white rounded-3xl shadow-lg overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-2">
+                <div class="h-80 lg:h-auto">
+                    <img src="https://cdn.britannica.com/07/123107-050-1520881F/bark-Cinnamomum-cassia-plant-spice.jpg"
+                        alt="Cinnamon"
+                        class="w-full h-full object-cover">
                 </div>
-
-                <!-- Cardamom -->
-                <div
-                    class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-                    <div class="h-72 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1596040033229-a0b4a1ab4fd2?w=800&q=90&auto=format&fit=crop"
-                            alt="Cardamom"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                <div class="p-8 lg:p-12">
+                    <span class="inline-block bg-gradient-to-r from-light-orange to-dark-orange text-white text-sm font-bold px-4 py-2 rounded-full mb-4">PREMIUM QUALITY</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Cinnamon (Dalchini)</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Our premium Cinnamon is sourced from the finest farms in Kerala and Karnataka, India. Known for its sweet, warm aroma and distinctive flavor, Indian cinnamon (Cassia) is widely used in both sweet and savory dishes. Each stick is carefully selected and processed to preserve its natural oils and aromatic compounds.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="flex items-center gap-2">
+                            <i class="bi bi-check-circle-fill text-light-orange"></i>
+                            <span class="text-gray-700">100% Natural</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="bi bi-check-circle-fill text-light-orange"></i>
+                            <span class="text-gray-700">Rich Aroma</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="bi bi-check-circle-fill text-light-orange"></i>
+                            <span class="text-gray-700">Hand Selected</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="bi bi-check-circle-fill text-light-orange"></i>
+                            <span class="text-gray-700">No Additives</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="bi bi-check-circle-fill text-light-orange"></i>
+                            <span class="text-gray-700">High Oil Content</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="bi bi-check-circle-fill text-light-orange"></i>
+                            <span class="text-gray-700">Export Quality</span>
+                        </div>
                     </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Cardamom</h3>
-                        <p class="text-gray-600">Queen of spices with aromatic fragrance and intense flavor.</p>
-                    </div>
-                </div>
-
-                <!-- Cumin -->
-                <div
-                    class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-                    <div class="h-72 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1599909715876-e04d5b5c1e66?w=800&q=90&auto=format&fit=crop"
-                            alt="Cumin Seeds"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                    </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Cumin</h3>
-                        <p class="text-gray-600">Essential spice with warm earthy flavor. Whole seeds.</p>
-                    </div>
-                </div>
-
-                <!-- Coriander -->
-                <div
-                    class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-                    <div class="h-72 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1599909715876-e04d5b5c1e66?w=800&q=90&auto=format&fit=crop"
-                            alt="Coriander"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                    </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Coriander</h3>
-                        <p class="text-gray-600">Aromatic seeds with citrusy notes. Raw and unprocessed.</p>
-                    </div>
-                </div>
-
-                <!-- Black Pepper -->
-                <div
-                    class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-                    <div class="h-72 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?w=800&q=90&auto=format&fit=crop"
-                            alt="Black Pepper"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                    </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Black Pepper</h3>
-                        <p class="text-gray-600">King of spices with bold pungent flavor. Whole peppercorns.</p>
-                    </div>
-                </div>
-
-                <!-- Chili Powder -->
-                <div
-                    class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-2">
-                    <div class="h-72 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1583032015627-133949af94c4?w=800&q=90&auto=format&fit=crop"
-                            alt="Chili Powder"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                    </div>
-                    <div class="p-6 text-center">
-                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Chili Powder</h3>
-                        <p class="text-gray-600">Fiery spice with vibrant color and heat. Ground from raw chilies.</p>
+                    <div class="border-t border-gray-200 pt-6">
+                        <h4 class="font-semibold text-gray-900 mb-2">Uses:</h4>
+                        <p class="text-gray-600">Curries, Biryani, Garam Masala, Tea & Coffee, Desserts, Baking, and traditional medicine. Essential spice for Indian and Middle Eastern cuisines.</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Specifications -->
+        <!-- Coriander - Detailed Section -->
+        <div class="mb-20 bg-white rounded-3xl shadow-lg overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-2">
+                <div class="h-80 lg:h-auto order-1 lg:order-2">
+                    <img src="https://images.unsplash.com/photo-1508748169069-82590c9f26e6?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Coriander Seeds"
+                        class="w-full h-full object-cover">
+                </div>
+                <div class="p-8 lg:p-12 order-2 lg:order-1">
+                    <span class="inline-block bg-green-500 text-white text-sm font-bold px-4 py-2 rounded-full mb-4">BESTSELLER</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Coriander Seeds (Dhaniya)</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Premium Coriander Seeds from Rajasthan and Gujarat, India - the largest producers of coriander in the world. Our coriander seeds have a bright, citrusy flavor with subtle sweetness. They are essential in Indian cooking and are used whole or ground in a variety of dishes. Each batch is carefully cleaned and graded for export.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="flex items-center gap-2">
+                            <i class="bi bi-check-circle-fill text-light-orange"></i>
+                            <span class="text-gray-700">Machine Cleaned</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="bi bi-check-circle-fill text-light-orange"></i>
+                            <span class="text-gray-700">Citrusy Flavor</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="bi bi-check-circle-fill text-light-orange"></i>
+                            <span class="text-gray-700">Sun Dried</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="bi bi-check-circle-fill text-light-orange"></i>
+                            <span class="text-gray-700">Uniform Size</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="bi bi-check-circle-fill text-light-orange"></i>
+                            <span class="text-gray-700">Low Moisture</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="bi bi-check-circle-fill text-light-orange"></i>
+                            <span class="text-gray-700">Whole & Ground Available</span>
+                        </div>
+                    </div>
+                    <div class="border-t border-gray-200 pt-6">
+                        <h4 class="font-semibold text-gray-900 mb-2">Uses:</h4>
+                        <p class="text-gray-600">Curry Powders, Garam Masala, Pickles, Chutneys, Soups, and as a key ingredient in most Indian dishes. Also used in brewing and pickling industries.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Clove - Detailed Section -->
+        <div class="mb-20 bg-white rounded-3xl shadow-lg overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-2">
+                <div class="h-80 lg:h-auto">
+                    <img src="https://images.unsplash.com/photo-1701191310584-3f319e0e6c59?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Cloves"
+                        class="w-full h-full object-cover">
+                </div>
+                <div class="p-8 lg:p-12">
+                    <span class="inline-block bg-purple-500 text-white text-sm font-bold px-4 py-2 rounded-full mb-4">AROMATIC</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Clove (Laung)</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Our premium Cloves are sourced from the spice gardens of Kerala, India. These aromatic flower buds are harvested before they open and carefully dried to preserve their intense flavor and medicinal properties. Indian cloves are prized worldwide for their strong, warm, and slightly bitter taste with a pungent aroma.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="flex items-center gap-2">
+                            <i class="bi bi-check-circle-fill text-light-orange"></i>
+                            <span class="text-gray-700">Intense Aroma</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="bi bi-check-circle-fill text-light-orange"></i>
+                            <span class="text-gray-700">High Eugenol Content</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="bi bi-check-circle-fill text-light-orange"></i>
+                            <span class="text-gray-700">Hand Picked</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="bi bi-check-circle-fill text-light-orange"></i>
+                            <span class="text-gray-700">Dark Brown Color</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="bi bi-check-circle-fill text-light-orange"></i>
+                            <span class="text-gray-700">Medicinal Grade</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="bi bi-check-circle-fill text-light-orange"></i>
+                            <span class="text-gray-700">Properly Dried</span>
+                        </div>
+                    </div>
+                    <div class="border-t border-gray-200 pt-6">
+                        <h4 class="font-semibold text-gray-900 mb-2">Uses:</h4>
+                        <p class="text-gray-600">Biryani, Garam Masala, Meat Dishes, Rice Preparations, Chai Tea, Desserts, and dental care products. Essential in Ayurvedic medicine.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Specifications Section -->
         <div class="bg-white rounded-3xl p-12 shadow-lg mb-16">
-            <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center">Product Specifications</h2>
+            <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center">Quality Standards & Packaging</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div>
-                    <h3 class="text-2xl font-semibold text-light-orange mb-4">Available Forms</h3>
-                    <ul class="space-y-2 text-gray-700">
-                        <li class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-light-orange"></i>
-                            Whole</li>
-                        <li class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-light-orange"></i>
-                            Ground</li>
-                        <li class="flex items-center gap-2"><i class="bi bi-check-circle-fill text-light-orange"></i>
-                            Crushed</li>
+                <div class="text-center p-6 bg-gray-50 rounded-2xl">
+                    <div class="w-16 h-16 bg-gradient-to-r from-light-orange to-dark-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="bi bi-award-fill text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Quality Standards</h3>
+                    <ul class="text-gray-600 space-y-2 text-left">
+                        <li>• Purity: 99% minimum</li>
+                        <li>• Moisture: 12% maximum</li>
+                        <li>• Foreign Matter: 0.5% max</li>
+                        <li>• Hand Sorted & Cleaned</li>
                     </ul>
                 </div>
-                <div>
-                    <h3 class="text-2xl font-semibold text-light-orange mb-4">Packaging</h3>
-                    <ul class="space-y-2 text-gray-700">
-                        <li class="flex items-center gap-2"><i class="bi bi-box text-light-orange"></i> 500g, 1kg, 5kg,
-                            25kg</li>
-                        <li class="flex items-center gap-2"><i class="bi bi-box text-light-orange"></i> Custom packaging
-                            available</li>
-                        <li class="flex items-center gap-2"><i class="bi bi-box text-light-orange"></i> Food-grade
-                            materials</li>
+                <div class="text-center p-6 bg-gray-50 rounded-2xl">
+                    <div class="w-16 h-16 bg-gradient-to-r from-light-orange to-dark-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="bi bi-box-seam-fill text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Packaging Options</h3>
+                    <ul class="text-gray-600 space-y-2 text-left">
+                        <li>• 100g, 250g, 500g Packs</li>
+                        <li>• 1kg, 5kg, 25kg Bags</li>
+                        <li>• Food-Grade Materials</li>
+                        <li>• Custom Packaging Available</li>
                     </ul>
                 </div>
-                <div>
-                    <h3 class="text-2xl font-semibold text-light-orange mb-4">Certifications</h3>
-                    <ul class="space-y-2 text-gray-700">
-                        <li class="flex items-center gap-2"><i class="bi bi-award-fill text-light-orange"></i> ISO 22000
-                        </li>
-                        <li class="flex items-center gap-2"><i class="bi bi-award-fill text-light-orange"></i> HACCP
-                        </li>
-                        <li class="flex items-center gap-2"><i class="bi bi-award-fill text-light-orange"></i> Organic
-                            Certified</li>
+                <div class="text-center p-6 bg-gray-50 rounded-2xl">
+                    <div class="w-16 h-16 bg-gradient-to-r from-light-orange to-dark-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="bi bi-patch-check-fill text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Certifications</h3>
+                    <ul class="text-gray-600 space-y-2 text-left">
+                        <li>• ISO 22000 Certified</li>
+                        <li>• HACCP Compliant</li>
+                        <li>• FSSAI Licensed</li>
+                        <li>• Spices Board Approved</li>
                     </ul>
                 </div>
             </div>
         </div>
 
-        <!-- CTA -->
-        <div class="text-center bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-12 text-white">
-            <h2 class="text-4xl font-bold mb-4">Interested in Our Spices?</h2>
-            <p class="text-xl text-gray-300 mb-8">Get premium quality raw spices for your business</p>
-            <a href="{% url 'website:contact' %}"
-                class="bg-gradient-to-r from-light-orange to-dark-orange text-white px-10 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 inline-block">
-                Contact Us
-            </a>
+        <!-- Why Choose Our Spices -->
+        <div class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-12 text-white mb-16">
+            <h2 class="text-4xl font-bold mb-8 text-center">Why Choose Our Spices?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-light-orange/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="bi bi-geo-alt-fill text-light-orange text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">Farm Fresh</h4>
+                    <p class="text-gray-400 text-sm">Direct from spice farms in Kerala, Karnataka & Rajasthan</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-light-orange/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="bi bi-leaf text-light-orange text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">100% Natural</h4>
+                    <p class="text-gray-400 text-sm">No chemicals, preservatives or artificial colors</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-light-orange/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="bi bi-lightning-charge text-light-orange text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">Fresh Processing</h4>
+                    <p class="text-gray-400 text-sm">Processed and packed to retain freshness</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-light-orange/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="bi bi-globe text-light-orange text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">Export Quality</h4>
+                    <p class="text-gray-400 text-sm">Meeting international quality standards</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="text-center bg-gradient-to-r from-light-orange to-dark-orange rounded-3xl p-12 text-white">
+            <h2 class="text-4xl font-bold mb-4">Ready to Order Premium Indian Spices?</h2>
+            <p class="text-xl text-white/90 mb-8">Contact us today for samples, pricing, and bulk order inquiries</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="{% url 'website:contact' %}"
+                    class="bg-white text-light-orange px-10 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 inline-block">
+                    <i class="bi bi-envelope-fill mr-2"></i>Get a Quote
+                </a>
+                <a href="tel:+911234567890"
+                    class="bg-transparent border-2 border-white text-white px-10 py-4 rounded-xl font-semibold text-lg hover:bg-white/10 hover:-translate-y-1 transition-all duration-300 inline-block">
+                    <i class="bi bi-telephone-fill mr-2"></i>Call Now
+                </a>
+            </div>
         </div>
     </div>
 </section>

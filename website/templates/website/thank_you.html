@@ -1,0 +1,119 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block title %}Thank You - SZ Global Arabia Traders{% endblock %}
+
+{% block content %}
+<!-- Thank You Page - Modern Tailwind -->
+<section class="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-100 py-20">
+    <!-- Background Elements -->
+    <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute top-0 left-0 w-96 h-96 bg-green-500/10 rounded-full filter blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-light-orange/10 rounded-full filter blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-light-orange/5 to-green-500/5 rounded-full filter blur-3xl"></div>
+    </div>
+
+    <div class="container mx-auto px-4 lg:px-8 relative z-10">
+        <div class="max-w-2xl mx-auto text-center">
+            <!-- Success Icon with Animation -->
+            <div class="mb-8 relative">
+                <div class="w-32 h-32 mx-auto bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center shadow-2xl animate-bounce-slow">
+                    <i class="bi bi-check-lg text-white text-6xl"></i>
+                </div>
+                <!-- Confetti Effect -->
+                <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-4">
+                    <div class="flex gap-2">
+                        <div class="w-3 h-3 bg-light-orange rounded-full animate-ping"></div>
+                        <div class="w-3 h-3 bg-green-500 rounded-full animate-ping" style="animation-delay: 0.2s;"></div>
+                        <div class="w-3 h-3 bg-yellow-400 rounded-full animate-ping" style="animation-delay: 0.4s;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thank You Message -->
+            <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 mb-6 leading-tight">
+                Thank <span class="bg-gradient-to-r from-green-500 to-green-600 bg-clip-text text-transparent">You!</span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-gray-600 mb-4 font-medium">
+                Your message has been received successfully!
+            </p>
+            
+            <p class="text-lg text-gray-500 mb-10 max-w-lg mx-auto">
+                We appreciate you reaching out to us. Our team will review your message and get back to you within <span class="text-light-orange font-semibold">24 hours</span>.
+            </p>
+
+            <!-- What's Next Card -->
+            <div class="bg-white rounded-3xl p-8 shadow-xl border border-gray-100 mb-10">
+                <h3 class="text-2xl font-bold text-gray-900 mb-6">What Happens Next?</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="text-center">
+                        <div class="w-14 h-14 mx-auto bg-light-orange/10 rounded-2xl flex items-center justify-center mb-3">
+                            <i class="bi bi-envelope-check text-light-orange text-2xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-1">Step 1</h4>
+                        <p class="text-gray-600 text-sm">We receive & review your message</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-14 h-14 mx-auto bg-light-orange/10 rounded-2xl flex items-center justify-center mb-3">
+                            <i class="bi bi-person-check text-light-orange text-2xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-1">Step 2</h4>
+                        <p class="text-gray-600 text-sm">Our team prepares a response</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-14 h-14 mx-auto bg-light-orange/10 rounded-2xl flex items-center justify-center mb-3">
+                            <i class="bi bi-telephone-outbound text-light-orange text-2xl"></i>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 mb-1">Step 3</h4>
+                        <p class="text-gray-600 text-sm">We contact you via email or phone</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="{% url 'website:home' %}"
+                    class="bg-gradient-to-r from-light-orange to-dark-orange text-white px-10 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <i class="bi bi-house-door mr-2"></i>Back to Home
+                </a>
+                <a href="{% url 'website:all_products' %}"
+                    class="bg-white border-2 border-gray-200 text-gray-900 px-10 py-4 rounded-xl font-bold text-lg hover:border-light-orange hover:text-light-orange transition-all duration-300">
+                    <i class="bi bi-box-seam mr-2"></i>View Products
+                </a>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="mt-12 pt-8 border-t border-gray-200">
+                <p class="text-gray-500 mb-4">Need immediate assistance?</p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                    <a href="mailto:info@szglobalarabia.com" class="flex items-center gap-2 text-gray-700 hover:text-light-orange transition-colors">
+                        <i class="bi bi-envelope-fill text-light-orange"></i>
+                        info@szglobalarabia.com
+                    </a>
+                    <span class="hidden sm:block text-gray-300">|</span>
+                    <a href="tel:+911234567890" class="flex items-center gap-2 text-gray-700 hover:text-light-orange transition-colors">
+                        <i class="bi bi-telephone-fill text-light-orange"></i>
+                        +91 XXX XXX XXXX
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Custom Animation -->
+<style>
+    @keyframes bounce-slow {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+    .animate-bounce-slow {
+        animation: bounce-slow 2s ease-in-out infinite;
+    }
+</style>
+{% endblock %}

@@ -1,16 +1,12 @@
-{% load static %}
+﻿{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Arabia Traders Pvt Ltd - Premium Exports From India{% endblock %}</title>
-
-    <!-- SEO Meta Tags -->
-    <meta name="description"
-        content="Arabia Traders - Leading exporter of premium raw rice, spices, and plywood from India to 50+ countries worldwide.">
-    <meta name="keywords" content="rice export, spices export, plywood export, India export, basmati rice, raw spices">
+    <title>{% block title %}SZ Global Arabia Traders - Delivering Quality From India to the World{% endblock %}
+    </title>
 
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -19,114 +15,262 @@
             theme: {
                 extend: {
                     colors: {
-                        'brand-amber': '#F59E0B',
-                        'brand-orange': '#EA580C',
-                    },
-                    fontFamily: {
-                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'light-gray': '#D9D9D9',
+                        'light-orange': '#FFB86C',
+                        'dark-orange': '#FF9F4A',
                     }
                 }
             }
         }
     </script>
-
-    <!-- Bootstrap Icons -->
+    <!-- Bootstrap Icons (keeping for icons) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-
-    <!-- Google Fonts - Inter -->
+    <!-- Google Fonts - Modern Geometric Sans-serif -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
-
-    {% block extra_css %}{% endblock %}
-
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'website/css/styles.css' %}">
+    
+    <!-- Global Cute Animations -->
     <style>
-        /* Smooth scrolling */
+        /* Page Load Animation */
+        body {
+            animation: pageLoad 0.8s ease-out;
+        }
+        
+        @keyframes pageLoad {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Smooth Link Hover */
+        a {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        /* Navbar Logo Bounce on Hover */
+        nav a img:hover {
+            animation: logoBounce 0.6s ease;
+        }
+        
+        @keyframes logoBounce {
+            0%, 100% { transform: scale(1); }
+            30% { transform: scale(1.1); }
+            50% { transform: scale(0.95); }
+            70% { transform: scale(1.05); }
+        }
+        
+        /* Button Press Effect */
+        button, .btn, [class*="bg-gradient"] {
+            transition: all 0.2s ease;
+        }
+        
+        button:active, .btn:active, [class*="bg-gradient"]:active {
+            transform: scale(0.97);
+        }
+        
+        /* Card Hover Sparkle Effect */
+        .group:hover {
+            animation: cardShine 0.6s ease;
+        }
+        
+        @keyframes cardShine {
+            0% { filter: brightness(1); }
+            50% { filter: brightness(1.05); }
+            100% { filter: brightness(1); }
+        }
+        
+        /* Floating Hearts/Elements Animation */
+        @keyframes floatUp {
+            0% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100px) scale(0.5);
+            }
+        }
+        
+        /* Cute Wiggle Animation */
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(3deg); }
+            75% { transform: rotate(-3deg); }
+        }
+        
+        .wiggle-hover:hover {
+            animation: wiggle 0.4s ease;
+        }
+        
+        /* Heartbeat Animation for Important Elements */
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            14% { transform: scale(1.05); }
+            28% { transform: scale(1); }
+            42% { transform: scale(1.05); }
+            70% { transform: scale(1); }
+        }
+        
+        .heartbeat:hover {
+            animation: heartbeat 1s ease-in-out;
+        }
+        
+        /* Smooth Image Loading */
+        img {
+            transition: opacity 0.3s ease, transform 0.5s ease;
+        }
+        
+        /* Icon Spin on Hover */
+        .bi:hover {
+            transition: transform 0.3s ease;
+        }
+        
+        i.bi-arrow-right:hover {
+            transform: translateX(5px);
+        }
+        
+        /* Social Icons Bounce */
+        footer a:hover .bi {
+            animation: iconBounce 0.4s ease;
+        }
+        
+        @keyframes iconBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        /* Navbar Shrink on Scroll (handled by JS) */
+        nav.scrolled {
+            padding-top: 0.5rem !important;
+            padding-bottom: 0.5rem !important;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        /* Cute Tooltip Style */
+        [title] {
+            position: relative;
+        }
+        
+        /* Gradient Border Animation */
+        @keyframes borderGlow {
+            0%, 100% { border-color: #FFB86C; }
+            50% { border-color: #FF9F4A; }
+        }
+        
+        .border-glow {
+            animation: borderGlow 2s ease infinite;
+        }
+        
+        /* Text Selection Color */
+        ::selection {
+            background: #FFB86C;
+            color: white;
+        }
+        
+        /* Smooth Scrolling */
         html {
             scroll-behavior: smooth;
         }
-
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
+        
+        /* Focus Ring Animation */
+        input:focus, button:focus, a:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 184, 108, 0.3);
         }
-
-        ::-webkit-scrollbar-track {
-            background: #1e293b;
+        
+        /* Loading Skeleton Animation */
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
         }
-
-        ::-webkit-scrollbar-thumb {
-            background: linear-gradient(to bottom, #f59e0b, #ea580c);
-            border-radius: 5px;
+        
+        .skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
         }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: linear-gradient(to bottom, #fbbf24, #f97316);
+        
+        /* Emoji Pop Animation */
+        @keyframes emojiPop {
+            0% { transform: scale(0); }
+            50% { transform: scale(1.3); }
+            100% { transform: scale(1); }
+        }
+        
+        /* Confetti-like particles */
+        @keyframes confetti {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-200px) rotate(720deg); opacity: 0; }
         }
     </style>
+    {% block extra_css %}{% endblock %}
 </head>
 
-<body class="font-sans bg-slate-50 text-slate-900 antialiased">
-    <!-- Navigation - Premium Glass Effect -->
-    <nav id="navbar" class="fixed w-full top-0 z-50 transition-all duration-500">
-        <div class="absolute inset-0 bg-slate-900/95 backdrop-blur-xl border-b border-white/10"></div>
-
-        <div class="container mx-auto px-4 lg:px-8 relative">
+<body class="font-['Inter'] bg-white text-gray-900">
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-white/95 backdrop-blur-lg shadow-md transition-all duration-300">
+        <div class="container mx-auto px-4 lg:px-8 py-3">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
-                <a href="{% url 'website:home' %}" class="flex items-center group">
-                    <img src="{% static 'website/images/logo.png' %}" alt="Arabia Traders Logo"
-                        class="h-14 w-auto object-contain group-hover:scale-105 transition-transform duration-300">
+                <a href="{% url 'website:home' %}" class="flex items-center space-x-3 group shrink-0">
+                    <img src="{% static 'website/images/logo.png' %}" alt="SZ Global Logo"
+                        class="w-48 h-auto object-contain transition-transform duration-300 group-hover:scale-105 mix-blend-multiply">
+                    <span class="text-xl font-bold text-gray-900 hidden sm:block">SZ Global Arabia Traders</span>
                 </a>
 
                 <!-- Desktop Menu -->
-                <div class="hidden lg:flex items-center space-x-1">
+                <div class="hidden lg:flex items-center space-x-8">
                     <a href="{% url 'website:home' %}"
-                        class="text-white/80 hover:text-amber-400 font-medium px-4 py-2 rounded-lg hover:bg-white/5 transition-all duration-300">
+                        class="text-gray-700 hover:text-light-orange font-medium transition-colors duration-300 relative group">
                         Home
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-light-orange group-hover:w-full transition-all duration-300"></span>
                     </a>
 
                     <!-- Products Dropdown -->
                     <div class="relative group">
                         <button
-                            class="text-white/80 hover:text-amber-400 font-medium px-4 py-2 rounded-lg hover:bg-white/5 transition-all duration-300 flex items-center gap-1">
+                            class="text-gray-700 hover:text-light-orange font-medium transition-colors duration-300 flex items-center space-x-1">
                             <span>Products</span>
                             <i
-                                class="bi bi-chevron-down text-xs group-hover:rotate-180 transition-transform duration-300"></i>
+                                class="bi bi-chevron-down text-sm group-hover:rotate-180 transition-transform duration-300"></i>
                         </button>
                         <div
-                            class="absolute top-full left-0 mt-2 w-64 bg-slate-800/95 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/10 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2 overflow-hidden">
+                            class="absolute top-full left-0 mt-2 w-56 bg-white rounded-2xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 translate-y-2">
                             <div class="py-2">
                                 <a href="{% url 'website:all_products' %}"
-                                    class="flex items-center gap-3 px-5 py-3 text-white hover:bg-amber-500/20 hover:text-amber-400 transition-all duration-200">
-                                    <i class="bi bi-grid-3x3-gap text-amber-400"></i>
+                                    class="block px-6 py-3 text-gray-700 hover:bg-light-orange/10 hover:text-light-orange transition-all duration-200">
                                     View All Products
                                 </a>
-                                <div class="border-t border-white/10 my-2"></div>
+                                <div class="border-t border-gray-100 my-2"></div>
                                 <a href="{% url 'website:rice' %}"
-                                    class="flex items-center gap-3 px-5 py-3 text-white/80 hover:bg-amber-500/20 hover:text-amber-400 transition-all duration-200">
-                                    <span class="text-lg">🌾</span>
+                                    class="block px-6 py-3 text-gray-700 hover:bg-light-orange/10 hover:text-light-orange transition-all duration-200">
                                     Rice Products
                                 </a>
                                 <a href="{% url 'website:spices' %}"
-                                    class="flex items-center gap-3 px-5 py-3 text-white/80 hover:bg-amber-500/20 hover:text-amber-400 transition-all duration-200">
-                                    <span class="text-lg">🌶️</span>
+                                    class="block px-6 py-3 text-gray-700 hover:bg-light-orange/10 hover:text-light-orange transition-all duration-200">
                                     Spices Collection
                                 </a>
                                 <a href="{% url 'website:plywood' %}"
-                                    class="flex items-center gap-3 px-5 py-3 text-white/80 hover:bg-amber-500/20 hover:text-amber-400 transition-all duration-200">
-                                    <span class="text-lg">🪵</span>
-                                    Plywood Sheets
+                                    class="block px-6 py-3 text-gray-700 hover:bg-light-orange/10 hover:text-light-orange transition-all duration-200">
+                                    Plywood
                                 </a>
                                 <a href="{% url 'website:industrial' %}"
-                                    class="flex items-center gap-3 px-5 py-3 text-white/80 hover:bg-amber-500/20 hover:text-amber-400 transition-all duration-200">
-                                    <span class="text-lg">⚙️</span>
+                                    class="block px-6 py-3 text-gray-700 hover:bg-light-orange/10 hover:text-light-orange transition-all duration-200">
                                     Industrial Items
                                 </a>
                                 <a href="{% url 'website:safety_shoes' %}"
-                                    class="flex items-center gap-3 px-5 py-3 text-white/80 hover:bg-amber-500/20 hover:text-amber-400 transition-all duration-200">
-                                    <span class="text-lg">👟</span>
+                                    class="block px-6 py-3 text-gray-700 hover:bg-light-orange/10 hover:text-light-orange transition-all duration-200">
                                     Safety Shoes
                                 </a>
                             </div>
@@ -134,52 +278,50 @@
                     </div>
 
                     <a href="{% url 'website:about' %}"
-                        class="text-white/80 hover:text-amber-400 font-medium px-4 py-2 rounded-lg hover:bg-white/5 transition-all duration-300">
+                        class="text-gray-700 hover:text-light-orange font-medium transition-colors duration-300 relative group">
                         About
+                        <span
+                            class="absolute bottom-0 left-0 w-0 h-0.5 bg-light-orange group-hover:w-full transition-all duration-300"></span>
                     </a>
-
                     <a href="{% url 'website:contact' %}"
-                        class="ml-4 bg-gradient-to-r from-amber-500 to-orange-500 text-white px-6 py-3 rounded-xl font-semibold shadow-lg shadow-amber-500/30 hover:shadow-amber-500/50 hover:-translate-y-0.5 transition-all duration-300 flex items-center gap-2">
-                        <i class="bi bi-envelope-fill"></i>
+                        class="bg-gradient-to-r from-light-orange to-dark-orange text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300">
                         Contact Us
                     </a>
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-button" class="lg:hidden text-white hover:text-amber-400 transition-colors p-2">
+                <button id="mobile-menu-button"
+                    class="lg:hidden text-gray-700 hover:text-light-orange transition-colors">
                     <i class="bi bi-list text-3xl"></i>
                 </button>
             </div>
 
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="lg:hidden hidden pb-6">
-                <div class="flex flex-col space-y-2 pt-4 border-t border-white/10">
+                <div class="flex flex-col space-y-4">
                     <a href="{% url 'website:home' %}"
-                        class="text-white hover:text-amber-400 font-medium py-3 px-4 rounded-xl hover:bg-white/5 transition-all">Home</a>
+                        class="text-gray-700 hover:text-light-orange font-medium transition-colors">Home</a>
                     <a href="{% url 'website:all_products' %}"
-                        class="text-white hover:text-amber-400 font-medium py-3 px-4 rounded-xl hover:bg-white/5 transition-all">All
-                        Products</a>
+                        class="text-gray-700 hover:text-light-orange font-medium transition-colors">All Products</a>
                     <a href="{% url 'website:rice' %}"
-                        class="text-white/70 hover:text-amber-400 font-medium py-2 px-8 rounded-xl hover:bg-white/5 transition-all text-sm">🌾
-                        Rice Products</a>
+                        class="text-gray-700 hover:text-light-orange font-medium transition-colors pl-4">Rice
+                        Products</a>
                     <a href="{% url 'website:spices' %}"
-                        class="text-white/70 hover:text-amber-400 font-medium py-2 px-8 rounded-xl hover:bg-white/5 transition-all text-sm">🌶️
-                        Spices</a>
+                        class="text-gray-700 hover:text-light-orange font-medium transition-colors pl-4">Spices
+                        Collection</a>
                     <a href="{% url 'website:plywood' %}"
-                        class="text-white/70 hover:text-amber-400 font-medium py-2 px-8 rounded-xl hover:bg-white/5 transition-all text-sm">🪵
-                        Plywood</a>
+                        class="text-gray-700 hover:text-light-orange font-medium transition-colors pl-4">Plywood</a>
                     <a href="{% url 'website:industrial' %}"
-                        class="text-white/70 hover:text-amber-400 font-medium py-2 px-8 rounded-xl hover:bg-white/5 transition-all text-sm">⚙️
-                        Industrial</a>
+                        class="text-gray-700 hover:text-light-orange font-medium transition-colors pl-4">Industrial
+                        Items</a>
                     <a href="{% url 'website:safety_shoes' %}"
-                        class="text-white/70 hover:text-amber-400 font-medium py-2 px-8 rounded-xl hover:bg-white/5 transition-all text-sm">👟
-                        Safety Shoes</a>
+                        class="text-gray-700 hover:text-light-orange font-medium transition-colors pl-4">Safety
+                        Shoes</a>
                     <a href="{% url 'website:about' %}"
-                        class="text-white hover:text-amber-400 font-medium py-3 px-4 rounded-xl hover:bg-white/5 transition-all">About</a>
+                        class="text-gray-700 hover:text-light-orange font-medium transition-colors">About</a>
                     <a href="{% url 'website:contact' %}"
-                        class="bg-gradient-to-r from-amber-500 to-orange-500 text-white px-6 py-3 rounded-xl font-semibold text-center mt-2">
-                        Contact Us
-                    </a>
+                        class="bg-gradient-to-r from-light-orange to-dark-orange text-white px-6 py-3 rounded-xl font-semibold text-center">Contact
+                        Us</a>
                 </div>
             </div>
         </div>
@@ -188,81 +330,59 @@
     <!-- Main Content -->
     {% block content %}{% endblock %}
 
-    <!-- Footer - Premium Dark Design -->
-    <footer class="bg-slate-900 text-white relative overflow-hidden">
-        <!-- Gradient Accent Line -->
-        <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500"></div>
+    <!-- Footer - Modern Tailwind -->
+    <footer class="bg-gradient-to-br from-gray-900 to-gray-800 text-white relative overflow-hidden">
+        <!-- Gradient Accent -->
+        <div
+            class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-light-orange via-dark-orange to-light-orange">
+        </div>
 
-        <!-- Decorative Orbs -->
-        <div class="absolute top-20 left-10 w-64 h-64 bg-amber-500/5 rounded-full filter blur-[100px]"></div>
-        <div class="absolute bottom-20 right-10 w-80 h-80 bg-orange-500/5 rounded-full filter blur-[100px]"></div>
-
-        <div class="container mx-auto px-4 lg:px-8 py-16 relative z-10">
+        <div class="container mx-auto px-4 lg:px-8 py-16">
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
                 <!-- About Section -->
                 <div>
-                    <div class="mb-6">
-                        <img src="{% static 'website/images/logo.png' %}" alt="Arabia Traders Logo"
-                            class="h-16 w-auto object-contain">
-                    </div>
-                    <p class="text-slate-400 mb-6 leading-relaxed">
-                        Your trusted partner for premium quality raw rice, spices, and plywood exports from India to the
-                        world.
+                    <h3 class="text-2xl font-bold text-light-orange mb-4">SZ Global Arabia Traders</h3>
+                    <p class="text-gray-300 mb-6 leading-relaxed">
+                        Delivering premium quality products from India to the world. Your trusted partner for raw rice,
+                        spices, and plywood.
                     </p>
                     <!-- Social Links -->
                     <div class="flex gap-3">
                         <a href="#"
-                            class="w-11 h-11 bg-white/5 hover:bg-gradient-to-br hover:from-amber-500 hover:to-orange-500 rounded-xl flex items-center justify-center text-white hover:scale-110 transition-all duration-300 border border-white/10 hover:border-transparent">
+                            class="w-11 h-11 bg-white/10 hover:bg-light-orange rounded-xl flex items-center justify-center text-white hover:scale-110 transition-all duration-300">
                             <i class="bi bi-facebook text-lg"></i>
                         </a>
                         <a href="#"
-                            class="w-11 h-11 bg-white/5 hover:bg-gradient-to-br hover:from-amber-500 hover:to-orange-500 rounded-xl flex items-center justify-center text-white hover:scale-110 transition-all duration-300 border border-white/10 hover:border-transparent">
+                            class="w-11 h-11 bg-white/10 hover:bg-light-orange rounded-xl flex items-center justify-center text-white hover:scale-110 transition-all duration-300">
                             <i class="bi bi-twitter text-lg"></i>
                         </a>
                         <a href="#"
-                            class="w-11 h-11 bg-white/5 hover:bg-gradient-to-br hover:from-amber-500 hover:to-orange-500 rounded-xl flex items-center justify-center text-white hover:scale-110 transition-all duration-300 border border-white/10 hover:border-transparent">
+                            class="w-11 h-11 bg-white/10 hover:bg-light-orange rounded-xl flex items-center justify-center text-white hover:scale-110 transition-all duration-300">
                             <i class="bi bi-linkedin text-lg"></i>
-                        </a>
-                        <a href="#"
-                            class="w-11 h-11 bg-white/5 hover:bg-gradient-to-br hover:from-green-500 hover:to-green-600 rounded-xl flex items-center justify-center text-white hover:scale-110 transition-all duration-300 border border-white/10 hover:border-transparent">
-                            <i class="bi bi-whatsapp text-lg"></i>
                         </a>
                     </div>
                 </div>
 
                 <!-- Quick Links -->
                 <div>
-                    <h4 class="text-lg font-bold text-white mb-6 flex items-center gap-2">
-                        <span class="w-8 h-0.5 bg-gradient-to-r from-amber-500 to-orange-500"></span>
-                        Quick Links
-                    </h4>
+                    <h4 class="text-xl font-semibold text-light-orange mb-4">Quick Links</h4>
                     <ul class="space-y-3">
                         <li>
                             <a href="{% url 'website:home' %}"
-                                class="text-slate-400 hover:text-amber-400 hover:translate-x-2 inline-flex items-center gap-2 transition-all duration-300">
-                                <i class="bi bi-chevron-right text-xs text-amber-500"></i>
+                                class="text-gray-300 hover:text-light-orange hover:translate-x-1 inline-block transition-all duration-300">
                                 Home
                             </a>
                         </li>
                         <li>
                             <a href="{% url 'website:about' %}"
-                                class="text-slate-400 hover:text-amber-400 hover:translate-x-2 inline-flex items-center gap-2 transition-all duration-300">
-                                <i class="bi bi-chevron-right text-xs text-amber-500"></i>
+                                class="text-gray-300 hover:text-light-orange hover:translate-x-1 inline-block transition-all duration-300">
                                 About Us
                             </a>
                         </li>
                         <li>
                             <a href="{% url 'website:all_products' %}"
-                                class="text-slate-400 hover:text-amber-400 hover:translate-x-2 inline-flex items-center gap-2 transition-all duration-300">
-                                <i class="bi bi-chevron-right text-xs text-amber-500"></i>
+                                class="text-gray-300 hover:text-light-orange hover:translate-x-1 inline-block transition-all duration-300">
                                 All Products
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{% url 'website:contact' %}"
-                                class="text-slate-400 hover:text-amber-400 hover:translate-x-2 inline-flex items-center gap-2 transition-all duration-300">
-                                <i class="bi bi-chevron-right text-xs text-amber-500"></i>
-                                Contact
                             </a>
                         </li>
                     </ul>
@@ -270,44 +390,24 @@
 
                 <!-- Products -->
                 <div>
-                    <h4 class="text-lg font-bold text-white mb-6 flex items-center gap-2">
-                        <span class="w-8 h-0.5 bg-gradient-to-r from-amber-500 to-orange-500"></span>
-                        Our Products
-                    </h4>
+                    <h4 class="text-xl font-semibold text-light-orange mb-4">Our Products</h4>
                     <ul class="space-y-3">
                         <li>
                             <a href="{% url 'website:rice' %}"
-                                class="text-slate-400 hover:text-amber-400 hover:translate-x-2 inline-flex items-center gap-2 transition-all duration-300">
-                                <span>🌾</span>
+                                class="text-gray-300 hover:text-light-orange hover:translate-x-1 inline-block transition-all duration-300">
                                 Rice Products
                             </a>
                         </li>
                         <li>
                             <a href="{% url 'website:spices' %}"
-                                class="text-slate-400 hover:text-amber-400 hover:translate-x-2 inline-flex items-center gap-2 transition-all duration-300">
-                                <span>🌶️</span>
+                                class="text-gray-300 hover:text-light-orange hover:translate-x-1 inline-block transition-all duration-300">
                                 Spices Collection
                             </a>
                         </li>
                         <li>
                             <a href="{% url 'website:plywood' %}"
-                                class="text-slate-400 hover:text-amber-400 hover:translate-x-2 inline-flex items-center gap-2 transition-all duration-300">
-                                <span>🪵</span>
+                                class="text-gray-300 hover:text-light-orange hover:translate-x-1 inline-block transition-all duration-300">
                                 Plywood Sheets
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{% url 'website:industrial' %}"
-                                class="text-slate-400 hover:text-amber-400 hover:translate-x-2 inline-flex items-center gap-2 transition-all duration-300">
-                                <span>⚙️</span>
-                                Industrial Items
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{% url 'website:safety_shoes' %}"
-                                class="text-slate-400 hover:text-amber-400 hover:translate-x-2 inline-flex items-center gap-2 transition-all duration-300">
-                                <span>👟</span>
-                                Safety Shoes
                             </a>
                         </li>
                     </ul>
@@ -315,98 +415,83 @@
 
                 <!-- Contact Info -->
                 <div>
-                    <h4 class="text-lg font-bold text-white mb-6 flex items-center gap-2">
-                        <span class="w-8 h-0.5 bg-gradient-to-r from-amber-500 to-orange-500"></span>
-                        Contact Us
-                    </h4>
+                    <h4 class="text-xl font-semibold text-light-orange mb-4">Contact Us</h4>
                     <ul class="space-y-4">
-                        <li class="flex items-start gap-4">
-                            <div
-                                class="w-10 h-10 bg-amber-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                                <i class="bi bi-geo-alt-fill text-amber-500"></i>
-                            </div>
-                            <div>
-                                <span class="text-slate-400">
-                                    India<br>
-                                    Exporting Worldwide
-                                </span>
-                            </div>
+                        <li class="flex items-start gap-3">
+                            <i class="bi bi-geo-alt-fill text-light-orange text-xl mt-1"></i>
+                            <span class="text-gray-300">
+                                India<br>
+                                Exporting Worldwide
+                            </span>
                         </li>
-                        <li class="flex items-start gap-4">
-                            <div
-                                class="w-10 h-10 bg-amber-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                                <i class="bi bi-envelope-fill text-amber-500"></i>
-                            </div>
-                            <div>
-                                <a href="mailto:info@arabiatraders.com"
-                                    class="text-slate-400 hover:text-amber-400 transition-colors">
-                                    info@arabiatraders.com
-                                </a>
-                            </div>
-                        </li>
-                        <li class="flex items-start gap-4">
-                            <div
-                                class="w-10 h-10 bg-amber-500/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                                <i class="bi bi-telephone-fill text-amber-500"></i>
-                            </div>
-                            <div>
-                                <a href="tel:+911234567890"
-                                    class="text-slate-400 hover:text-amber-400 transition-colors">
-                                    +91 123 456 7890
-                                </a>
-                            </div>
+                        <li class="flex items-start gap-3">
+                            <i class="bi bi-envelope-fill text-light-orange text-xl"></i>
+                            <a href="mailto:info@szglobalarabia.com"
+                                class="text-gray-300 hover:text-light-orange transition-colors">
+                                info@szglobalarabia.com
+                            </a>
                         </li>
                     </ul>
                 </div>
             </div>
 
             <!-- Bottom Bar -->
-            <div class="border-t border-slate-800 mt-12 pt-8">
-                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p class="text-slate-500 text-center md:text-left">
-                        © 2025 Arabia Traders Pvt Ltd. All rights reserved.
-                    </p>
-                    <div class="flex items-center gap-2 text-slate-500">
-                        <span>Made with</span>
-                        <i class="bi bi-heart-fill text-red-500 animate-pulse"></i>
-                        <span>in</span>
-                        <span
-                            class="bg-gradient-to-r from-orange-500 to-green-500 bg-clip-text text-transparent font-semibold">India
-                            🇮🇳</span>
-                    </div>
-                </div>
+            <div class="border-t border-gray-700 mt-12 pt-8 text-center">
+                <p class="text-gray-400">
+                    © 2025 SZ Global Arabia Traders Pvt. Ltd. All rights reserved. |
+                    <span class="text-light-orange">Origin: India</span>
+                </p>
             </div>
         </div>
     </footer>
 
-    <!-- Mobile Menu Script -->
-    <script>
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuIcon = mobileMenuButton.querySelector('i');
+    <!-- Chat Widget -->
+    <div id="chat-widget" class="fixed bottom-24 right-6 w-96 max-w-[calc(100vw-3rem)] bg-white rounded-3xl shadow-2xl border border-gray-100 z-50 hidden overflow-hidden">
+        <!-- Chat Header -->
+        <div class="bg-gradient-to-r from-light-orange to-dark-orange p-4 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
+                    <i class="bi bi-robot text-white text-xl"></i>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold">SZ Global Assistant</h4>
+                    <p class="text-white/80 text-xs">Online • Ask me anything</p>
+                </div>
+            </div>
+            <button id="chat-close" class="text-white/80 hover:text-white transition-colors">
+                <i class="bi bi-x-lg text-xl"></i>
+            </button>
+        </div>
+        
+        <!-- Chat Messages -->
+        <div id="chat-messages" class="h-80 overflow-y-auto p-4 bg-gray-50">
+            <!-- Messages will be added here -->
+        </div>
+        
+        <!-- Chat Input -->
+        <div class="p-4 bg-white border-t border-gray-100">
+            <div class="flex gap-2">
+                <input type="text" id="chat-input" 
+                    placeholder="Type your message..." 
+                    class="flex-1 px-4 py-3 bg-gray-100 rounded-xl border-0 focus:ring-2 focus:ring-light-orange focus:bg-white transition-all text-sm">
+                <button id="chat-send" 
+                    class="bg-gradient-to-r from-light-orange to-dark-orange text-white px-4 py-3 rounded-xl hover:shadow-lg transition-all">
+                    <i class="bi bi-send-fill"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Chat Toggle Button -->
+    <button id="chat-toggle" 
+        class="fixed bottom-6 right-6 w-16 h-16 bg-gradient-to-r from-light-orange to-dark-orange text-white rounded-full shadow-2xl hover:shadow-3xl hover:scale-110 transition-all duration-300 z-50 flex items-center justify-center group">
+        <i class="bi bi-chat-dots-fill text-2xl group-hover:scale-110 transition-transform"></i>
+        <span class="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full border-2 border-white animate-pulse"></span>
+    </button>
 
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            if (mobileMenu.classList.contains('hidden')) {
-                menuIcon.classList.remove('bi-x');
-                menuIcon.classList.add('bi-list');
-            } else {
-                menuIcon.classList.remove('bi-list');
-                menuIcon.classList.add('bi-x');
-            }
-        });
-
-        // Navbar scroll effect
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('shadow-2xl');
-            } else {
-                navbar.classList.remove('shadow-2xl');
-            }
-        });
-    </script>
-
+    <!-- Custom JS -->
+    <script src="{% static 'website/js/script.js' %}"></script>
+    <script src="{% static 'website/js/chat-assistant.js' %}"></script>
     {% block extra_js %}{% endblock %}
 </body>
 

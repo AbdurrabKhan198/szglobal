@@ -135,3 +135,20 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# Default primary key field type
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+# ====================================
+# BREVO EMAIL CONFIGURATION
+# ====================================
+# Get your API key from: https://app.brevo.com/settings/keys/api
+
+BREVO_API_KEY = ''  # <-- PASTE YOUR BREVO API KEY HERE
+
+# Email Settings
+NOTIFICATION_EMAIL = 'info@szglobalarabia.com'  # Email to receive contact notifications
+SENDER_EMAIL = 'info@szglobalarabia.com'  # Sender email (must be verified in Brevo)
+SENDER_NAME = 'SZ Global Arabia Traders'
+

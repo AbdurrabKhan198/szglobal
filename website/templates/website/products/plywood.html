@@ -8,12 +8,11 @@
         <!-- Hero Section -->
         <div class="text-center mb-16">
             <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 mb-4">
-                Premium Plywood Sheets Export
+                Premium Plywood Sheets
             </h1>
             <div class="w-24 h-1.5 bg-gradient-to-r from-light-orange to-dark-orange mx-auto rounded-full mb-6"></div>
             <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-4">
-                <span class="text-light-orange font-semibold">Origin: India</span> | High-quality plywood sheets in 4x4
-                and 2x2 sizes. Perfect for your construction and building needs.
+                <span class="text-light-orange font-semibold">Origin: India</span> | High-quality plywood sheets manufactured from sustainable Indian timber. Perfect for construction, furniture, and interior applications.
             </p>
             <a href="{% url 'website:contact' %}"
                 class="bg-gradient-to-r from-light-orange to-dark-orange text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 inline-block">
@@ -21,129 +20,242 @@
             </a>
         </div>
 
-        <!-- Available Sizes -->
-        <div class="mb-20">
-            <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">Available Sizes</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <!-- 4x4 Plywood -->
-                <div
-                    class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-3">
-                    <div class="h-72 overflow-hidden relative">
-                        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-light-orange to-dark-orange">
-                        </div>
-                        <img src="https://images.unsplash.com/photo-1617104551722-3b2ccb57be2c?w=800&q=90&auto=format&fit=crop"
-                            alt="4x4 Plywood"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                    </div>
-                    <div class="p-8">
-                        <h3 class="text-3xl font-bold text-gray-900 mb-3">4x4 Plywood Sheets</h3>
-                        <p class="text-gray-600 mb-4">Standard 4x4 feet plywood sheets. Ideal for construction,
-                            furniture, and paneling applications.</p>
-                        <ul class="space-y-2 text-gray-700">
-                            <li class="flex items-center gap-2"><i
-                                    class="bi bi-check-circle-fill text-light-orange"></i> Dimensions: 4' x 4'</li>
-                            <li class="flex items-center gap-2"><i
-                                    class="bi bi-check-circle-fill text-light-orange"></i> Thickness: 6mm to 25mm</li>
-                            <li class="flex items-center gap-2"><i
-                                    class="bi bi-check-circle-fill text-light-orange"></i> Grade: BWR, BWP, MR</li>
-                        </ul>
-                    </div>
+        <!-- 4x4 Plywood - Detailed Section -->
+        <div class="mb-20 bg-white rounded-3xl shadow-lg overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-2">
+                <div class="h-80 lg:h-auto">
+                    <img src="https://mobileimages.lowes.com/productimages/419478d7-0aa6-4680-9ce4-374306624ccd/10359381.jpg"
+                        alt="4x4 Plywood Sheets"
+                        class="w-full h-full object-cover">
                 </div>
-
-                <!-- 2x2 Plywood -->
-                <div
-                    class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-3">
-                    <div class="h-72 overflow-hidden relative">
-                        <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-light-orange to-dark-orange">
+                <div class="p-8 lg:p-12">
+                    <span class="inline-block bg-gradient-to-r from-light-orange to-dark-orange text-white text-sm font-bold px-4 py-2 rounded-full mb-4">STANDARD SIZE</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">4x4 Feet Plywood Sheets</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Our 4x4 feet plywood sheets are the industry standard for large-scale construction and furniture projects. Manufactured from premium Indian hardwood, these sheets offer exceptional strength, durability, and a smooth finish. Each sheet undergoes rigorous quality checks to ensure consistency and reliability.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="flex items-center gap-2">
+                            <i class="bi bi-check-circle-fill text-light-orange"></i>
+                            <span class="text-gray-700">Size: 4' x 4' (1220 x 1220mm)</span>
                         </div>
-                        <img src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=800&q=90&auto=format&fit=crop"
-                            alt="2x2 Plywood"
-                            class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                        <div class="flex items-center gap-2">
+                            <i class="bi bi-check-circle-fill text-light-orange"></i>
+                            <span class="text-gray-700">Thickness: 6mm to 25mm</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="bi bi-check-circle-fill text-light-orange"></i>
+                            <span class="text-gray-700">BWR & BWP Grades</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="bi bi-check-circle-fill text-light-orange"></i>
+                            <span class="text-gray-700">Termite Resistant</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="bi bi-check-circle-fill text-light-orange"></i>
+                            <span class="text-gray-700">Smooth Finish</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="bi bi-check-circle-fill text-light-orange"></i>
+                            <span class="text-gray-700">IS 303 Certified</span>
+                        </div>
                     </div>
-                    <div class="p-8">
-                        <h3 class="text-3xl font-bold text-gray-900 mb-3">2x2 Plywood Sheets</h3>
-                        <p class="text-gray-600 mb-4">Compact 2x2 feet plywood sheets. Perfect for smaller projects and
-                            precision work.</p>
-                        <ul class="space-y-2 text-gray-700">
-                            <li class="flex items-center gap-2"><i
-                                    class="bi bi-check-circle-fill text-light-orange"></i> Dimensions: 2' x 2'</li>
-                            <li class="flex items-center gap-2"><i
-                                    class="bi bi-check-circle-fill text-light-orange"></i> Thickness: 4mm to 18mm</li>
-                            <li class="flex items-center gap-2"><i
-                                    class="bi bi-check-circle-fill text-light-orange"></i> Grade: Commercial & Marine
-                            </li>
-                        </ul>
+                    <div class="border-t border-gray-200 pt-6">
+                        <h4 class="font-semibold text-gray-900 mb-2">Applications:</h4>
+                        <p class="text-gray-600">Wall paneling, flooring, roofing, furniture making, door manufacturing, partitions, and construction shuttering. Ideal for both interior and exterior use.</p>
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- Product Specifications -->
-        <div class="bg-white rounded-3xl p-12 shadow-lg mb-16">
-            <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center">Product Specifications</h2>
+        <!-- 2x2 Plywood - Detailed Section -->
+        <div class="mb-20 bg-white rounded-3xl shadow-lg overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-2">
+                <div class="h-80 lg:h-auto order-1 lg:order-2">
+                    <img src="https://www.vortex-rc.com/wp-content/uploads/2019/07/Vortex-RC-1.0-and-2.0mm-Birch-Plywood-Sheet-Strong-and-Useful-for-Making-Structural-Parts-for-RC-Plane-Aeromodels-and-Drones.jpg"
+                        alt="2x2 Plywood Sheets"
+                        class="w-full h-full object-cover">
+                </div>
+                <div class="p-8 lg:p-12 order-2 lg:order-1">
+                    <span class="inline-block bg-green-500 text-white text-sm font-bold px-4 py-2 rounded-full mb-4">COMPACT SIZE</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">2x2 Feet Plywood Sheets</h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Our compact 2x2 feet plywood sheets are perfect for smaller projects, precision work, and applications where handling convenience is important. These sheets offer the same quality and durability as our larger panels but in a more manageable size for DIY enthusiasts and craftsmen.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mb-6">
+                        <div class="flex items-center gap-2">
+                            <i class="bi bi-check-circle-fill text-light-orange"></i>
+                            <span class="text-gray-700">Size: 2' x 2' (610 x 610mm)</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="bi bi-check-circle-fill text-light-orange"></i>
+                            <span class="text-gray-700">Thickness: 4mm to 18mm</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="bi bi-check-circle-fill text-light-orange"></i>
+                            <span class="text-gray-700">Commercial & Marine</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="bi bi-check-circle-fill text-light-orange"></i>
+                            <span class="text-gray-700">Easy to Handle</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="bi bi-check-circle-fill text-light-orange"></i>
+                            <span class="text-gray-700">Precision Cut</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <i class="bi bi-check-circle-fill text-light-orange"></i>
+                            <span class="text-gray-700">Quality Assured</span>
+                        </div>
+                    </div>
+                    <div class="border-t border-gray-200 pt-6">
+                        <h4 class="font-semibold text-gray-900 mb-2">Applications:</h4>
+                        <p class="text-gray-600">Small furniture, cabinet backs, drawer bottoms, craft projects, models, picture frames, and DIY home improvements. Perfect for precision woodworking.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Plywood Types Section -->
+        <div class="mb-20">
+            <h2 class="text-4xl font-bold text-center text-gray-900 mb-12">Plywood Types We Export</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div>
-                    <h3 class="text-2xl font-semibold text-light-orange mb-4">Types Available</h3>
-                    <ul class="space-y-3 text-gray-700">
-                        <li class="flex items-start gap-3">
-                            <i class="bi bi-check-circle-fill text-light-orange text-xl mt-1"></i>
-                            <span><strong>Commercial Plywood:</strong> General purpose</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="bi bi-check-circle-fill text-light-orange text-xl mt-1"></i>
-                            <span><strong>Marine Plywood:</strong> Water resistant</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="bi bi-check-circle-fill text-light-orange text-xl mt-1"></i>
-                            <span><strong>BWR/BWP:</strong> Boiling water resistant/proof</span>
-                        </li>
+                <!-- Commercial Plywood -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg text-center">
+                    <div class="w-20 h-20 bg-gradient-to-r from-light-orange to-dark-orange rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="bi bi-grid-3x3-gap-fill text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Commercial Plywood</h3>
+                    <p class="text-gray-600 mb-4">General purpose plywood suitable for interior applications. Affordable and versatile option for furniture and interior work.</p>
+                    <ul class="text-left text-gray-600 space-y-2">
+                        <li class="flex items-center gap-2"><i class="bi bi-check text-light-orange"></i> MR Grade (Moisture Resistant)</li>
+                        <li class="flex items-center gap-2"><i class="bi bi-check text-light-orange"></i> Interior Use</li>
+                        <li class="flex items-center gap-2"><i class="bi bi-check text-light-orange"></i> Cost Effective</li>
                     </ul>
                 </div>
-                <div>
-                    <h3 class="text-2xl font-semibold text-light-orange mb-4">Core Materials</h3>
-                    <ul class="space-y-3 text-gray-700">
-                        <li class="flex items-start gap-3">
-                            <i class="bi bi-tree-fill text-light-orange text-xl mt-1"></i>
-                            <span>Hardwood core</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="bi bi-tree-fill text-light-orange text-xl mt-1"></i>
-                            <span>Softwood core</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="bi bi-tree-fill text-light-orange text-xl mt-1"></i>
-                            <span>Eucalyptus core</span>
-                        </li>
+
+                <!-- Marine Plywood -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg text-center">
+                    <div class="w-20 h-20 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="bi bi-water text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">Marine Plywood</h3>
+                    <p class="text-gray-600 mb-4">Waterproof plywood designed for high moisture environments. Ideal for bathrooms, kitchens, and outdoor furniture.</p>
+                    <ul class="text-left text-gray-600 space-y-2">
+                        <li class="flex items-center gap-2"><i class="bi bi-check text-blue-500"></i> BWP Grade (Waterproof)</li>
+                        <li class="flex items-center gap-2"><i class="bi bi-check text-blue-500"></i> Exterior & Marine Use</li>
+                        <li class="flex items-center gap-2"><i class="bi bi-check text-blue-500"></i> Long Lasting</li>
                     </ul>
                 </div>
-                <div>
-                    <h3 class="text-2xl font-semibold text-light-orange mb-4">Quality Standards</h3>
-                    <ul class="space-y-3 text-gray-700">
-                        <li class="flex items-start gap-3">
-                            <i class="bi bi-award-fill text-light-orange text-xl mt-1"></i>
-                            <span>IS 303 certified</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="bi bi-award-fill text-light-orange text-xl mt-1"></i>
-                            <span>Zero formaldehyde emission</span>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <i class="bi bi-award-fill text-light-orange text-xl mt-1"></i>
-                            <span>Termite & borer resistant</span>
-                        </li>
+
+                <!-- BWR Plywood -->
+                <div class="bg-white rounded-3xl p-8 shadow-lg text-center">
+                    <div class="w-20 h-20 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="bi bi-shield-check text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-4">BWR Plywood</h3>
+                    <p class="text-gray-600 mb-4">Boiling Water Resistant plywood for areas with occasional moisture exposure. Perfect balance of quality and value.</p>
+                    <ul class="text-left text-gray-600 space-y-2">
+                        <li class="flex items-center gap-2"><i class="bi bi-check text-green-500"></i> BWR Grade</li>
+                        <li class="flex items-center gap-2"><i class="bi bi-check text-green-500"></i> Semi-Waterproof</li>
+                        <li class="flex items-center gap-2"><i class="bi bi-check text-green-500"></i> Versatile Use</li>
                     </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Specifications Section -->
+        <div class="bg-white rounded-3xl p-12 shadow-lg mb-16">
+            <h2 class="text-4xl font-bold text-gray-900 mb-8 text-center">Quality Standards & Specifications</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="text-center p-6 bg-gray-50 rounded-2xl">
+                    <div class="w-16 h-16 bg-gradient-to-r from-light-orange to-dark-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="bi bi-rulers text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Thickness Options</h3>
+                    <ul class="text-gray-600 space-y-2 text-left">
+                        <li>• 4mm - Lightweight panels</li>
+                        <li>• 6mm - Standard thin ply</li>
+                        <li>• 9mm, 12mm - Medium duty</li>
+                        <li>• 18mm, 25mm - Heavy duty</li>
+                    </ul>
+                </div>
+                <div class="text-center p-6 bg-gray-50 rounded-2xl">
+                    <div class="w-16 h-16 bg-gradient-to-r from-light-orange to-dark-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="bi bi-tree-fill text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Core Materials</h3>
+                    <ul class="text-gray-600 space-y-2 text-left">
+                        <li>• Hardwood Core</li>
+                        <li>• Eucalyptus Core</li>
+                        <li>• Gurjan Face</li>
+                        <li>• Poplar Core Available</li>
+                    </ul>
+                </div>
+                <div class="text-center p-6 bg-gray-50 rounded-2xl">
+                    <div class="w-16 h-16 bg-gradient-to-r from-light-orange to-dark-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="bi bi-patch-check-fill text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-3">Certifications</h3>
+                    <ul class="text-gray-600 space-y-2 text-left">
+                        <li>• IS 303 Certified</li>
+                        <li>• IS 710 Compliant</li>
+                        <li>• Zero Formaldehyde</li>
+                        <li>• Termite & Borer Treated</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why Choose Our Plywood -->
+        <div class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-12 text-white mb-16">
+            <h2 class="text-4xl font-bold mb-8 text-center">Why Choose Our Plywood?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-light-orange/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="bi bi-tree text-light-orange text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">Sustainable Timber</h4>
+                    <p class="text-gray-400 text-sm">Sourced from certified sustainable forests in India</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-light-orange/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="bi bi-shield-check text-light-orange text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">Quality Tested</h4>
+                    <p class="text-gray-400 text-sm">Every batch tested for strength and durability</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-light-orange/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="bi bi-truck text-light-orange text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">Global Export</h4>
+                    <p class="text-gray-400 text-sm">Reliable shipping to international destinations</p>
+                </div>
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-light-orange/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="bi bi-currency-dollar text-light-orange text-2xl"></i>
+                    </div>
+                    <h4 class="font-bold mb-2">Competitive Rates</h4>
+                    <p class="text-gray-400 text-sm">Factory direct pricing for bulk orders</p>
                 </div>
             </div>
         </div>
 
         <!-- CTA Section -->
-        <div class="text-center bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-12 text-white">
-            <h2 class="text-4xl font-bold mb-4">Need Bulk Plywood Orders?</h2>
-            <p class="text-xl text-gray-300 mb-8">Contact us for competitive pricing and reliable delivery</p>
-            <a href="{% url 'website:contact' %}"
-                class="bg-gradient-to-r from-light-orange to-dark-orange text-white px-10 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 inline-block">
-                Get a Quote
-            </a>
+        <div class="text-center bg-gradient-to-r from-light-orange to-dark-orange rounded-3xl p-12 text-white">
+            <h2 class="text-4xl font-bold mb-4">Ready to Order Premium Plywood?</h2>
+            <p class="text-xl text-white/90 mb-8">Contact us for samples, specifications, and bulk pricing</p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="{% url 'website:contact' %}"
+                    class="bg-white text-light-orange px-10 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 inline-block">
+                    <i class="bi bi-envelope-fill mr-2"></i>Get a Quote
+                </a>
+                <a href="tel:+911234567890"
+                    class="bg-transparent border-2 border-white text-white px-10 py-4 rounded-xl font-semibold text-lg hover:bg-white/10 hover:-translate-y-1 transition-all duration-300 inline-block">
+                    <i class="bi bi-telephone-fill mr-2"></i>Call Now
+                </a>
+            </div>
         </div>
     </div>
 </section>

@@ -13,5 +13,6 @@ urlpatterns = [
     path('products/industrial/', views.industrial, name='industrial'),
     path('products/safety-shoes/', views.safety_shoes, name='safety_shoes'),
     path('products/', views.all_products, name='all_products'),
+    path('thank-you/', views.thank_you, name='thank_you'),
 ]
 
