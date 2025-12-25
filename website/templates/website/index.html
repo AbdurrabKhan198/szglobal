@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block content %}
+
 <!-- Hero Section - Modern Tailwind -->
 <section id="home"
     class="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-gray-50 via-white to-gray-100 pt-20">
@@ -58,12 +59,12 @@
 </section>
 
 <!-- Products Section Wrapper -->
-<section id="products" class="scroll-mt-20">
+<!-- <section id="products" class="scroll-mt-20"> -->
     <!-- Rice Products Section -->
-    <section id="rice-products" class="py-20 bg-gradient-to-b from-white to-gray-50">
-        <div class="container mx-auto px-4 lg:px-8">
+    <!-- <section id="rice-products" class="py-20 bg-gradient-to-b from-white to-gray-50">
+        <div class="container mx-auto px-4 lg:px-8"> -->
             <!-- Section Header -->
-            <div class="text-center mb-16 scroll-reveal">
+            <!-- <div class="text-center mb-16 scroll-reveal">
                 <h2 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
                     Premium Basmati Rice
                 </h2>
@@ -74,6 +75,236 @@
                 </p>
             </div>
 
+
+            </div>
+        </div>
+    </section>
+</section> -->
+
+<!-- All Products Section -->
+<section id="all-products" class="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <div class="container mx-auto px-4 lg:px-8">
+        <!-- Page Header -->
+        <div class="text-center mb-16">
+            <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 mb-4">
+                Our Products
+            </h1>
+            <div class="w-24 h-1.5 bg-gradient-to-r from-light-orange to-dark-orange mx-auto rounded-full mb-6"></div>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Discover our complete range of premium quality products exported from India to the world
+            </p>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            <!-- Rice Products Card -->
+            <div
+                class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-3">
+                <div class="h-64 overflow-hidden relative">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-light-orange to-dark-orange">
+                    </div>
+                    <img src=https://plus.unsplash.com/premium_photo-1705338026411-00639520a438?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Raw Rice Products"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div
+                        class="absolute top-4 right-4 bg-light-orange text-white px-4 py-2 rounded-full font-semibold text-sm">
+                        Origin: India
+                    </div>
+                </div>
+                <div class="p-8">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-3">Premium Raw Rice Products</h2>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        <strong>Origin: India</strong> | Raw rice exported to over 50 countries worldwide. We specialize
+                        in premium quality unprocessed rice varieties including Basmati, Jasmine, Brown, and Parboiled
+                        rice that meet international standards.
+                    </p>
+                    <a href="{% url 'website:rice' %}"
+                        class="inline-flex items-center gap-2 bg-gradient-to-r from-light-orange to-dark-orange text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                        View Rice Products
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Spices Card -->
+            <div
+                class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-3">
+                <div class="h-64 overflow-hidden relative">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-light-orange to-dark-orange">
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1736134764385-cb8ee2e583e6?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Raw Spices"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div
+                        class="absolute top-4 right-4 bg-light-orange text-white px-4 py-2 rounded-full font-semibold text-sm">
+                        Origin: India
+                    </div>
+                </div>
+                <div class="p-8">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-3">Raw Spices Collection</h2>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        <strong>Origin: India</strong> | Authentic raw spices from the heart of India. Our premium
+                        unprocessed spice collection includes Turmeric, Cardamom, Cumin, Coriander, Black Pepper, and
+                        Chili Powder.
+                    </p>
+                    <a href="{% url 'website:spices' %}"
+                        class="inline-flex items-center gap-2 bg-gradient-to-r from-light-orange to-dark-orange text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                        View Spices
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Plywood Card -->
+            <div
+                class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-3">
+                <div class="h-64 overflow-hidden relative">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-light-orange to-dark-orange">
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1700973408133-b45276ec8feb?q=80&w=379&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Plywood Sheets"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div
+                        class="absolute top-4 right-4 bg-light-orange text-white px-4 py-2 rounded-full font-semibold text-sm">
+                        Origin: India
+                    </div>
+                </div>
+                <div class="p-8">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-3">Premium Plywood Sheets</h2>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        <strong>Origin: India</strong> | Quality plywood sheets in 4x4 and 2x2 sizes. Perfect for
+                        construction and building applications.
+                    </p>
+                    <a href="{% url 'website:plywood' %}"
+                        class="inline-flex items-center gap-2 bg-gradient-to-r from-light-orange to-dark-orange text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                        View Plywood
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Industrial Items Card -->
+            <div
+                class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-3">
+                <div class="h-64 overflow-hidden relative">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-light-orange to-dark-orange">
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=90&auto=format&fit=crop"
+                        alt="Industrial Items"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div
+                        class="absolute top-4 right-4 bg-light-orange text-white px-4 py-2 rounded-full font-semibold text-sm">
+                        Global Supply
+                    </div>
+                </div>
+                <div class="p-8">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-3">Industrial Items & Machinery</h2>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Quality industrial equipment and machinery for manufacturing, construction, and various
+                        industrial applications. Reliable products backed by technical support.
+                    </p>
+                    <a href="{% url 'website:industrial' %}"
+                        class="inline-flex items-center gap-2 bg-gradient-to-r from-light-orange to-dark-orange text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                        View Industrial Items
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Safety Shoes Card -->
+            <div
+                class="group bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-3">
+                <div class="h-64 overflow-hidden relative">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-light-orange to-dark-orange">
+                    </div>
+                    <img src="https://plus.unsplash.com/premium_photo-1726797983325-62c76344295b?q=80&w=902&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Safety Shoes"
+                        class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                    <div
+                        class="absolute top-4 right-4 bg-light-orange text-white px-4 py-2 rounded-full font-semibold text-sm">
+                        Safety First
+                    </div>
+                </div>
+                <div class="p-8">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-3">Safety Shoes</h2>
+                    <p class="text-gray-600 mb-4 leading-relaxed">
+                        Premium quality leather safety shoes designed for worker protection. Features include steel toe
+                        caps, slip-resistant soles, and compliance with international safety standards.
+                    </p>
+                    <a href="{% url 'website:safety_shoes' %}"
+                        class="inline-flex items-center gap-2 bg-gradient-to-r from-light-orange to-dark-orange text-white px-6 py-3 rounded-xl font-semibold hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+                        View Safety Shoes
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why Choose Section -->
+        <div class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-12 text-white">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">Why Choose Our Products?</h2>
+                <div class="w-24 h-1.5 bg-gradient-to-r from-light-orange to-dark-orange mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-light-orange/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="bi bi-shield-check text-light-orange text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Premium Quality</h3>
+                    <p class="text-gray-300">Certified products meeting international standards</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-light-orange/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="bi bi-globe text-light-orange text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Global Reach</h3>
+                    <p class="text-gray-300">Exporting to 50+ countries worldwide</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-light-orange/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="bi bi-truck text-light-orange text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Reliable Logistics</h3>
+                    <p class="text-gray-300">On-time delivery with careful packaging</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="text-center">
+                    <div class="w-16 h-16 bg-light-orange/20 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="bi bi-headset text-light-orange text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">24/7 Support</h3>
+                    <p class="text-gray-300">Dedicated customer service team</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CTA Section -->
+        <div class="text-center mt-16">
+            <h2 class="text-3xl font-bold text-gray-900 mb-4">Ready to Partner With Us?</h2>
+            <p class="text-xl text-gray-600 mb-8">Get in touch for quotes and bulk orders</p>
+            <a href="{% url 'website:contact' %}"
+                class="bg-gradient-to-r from-light-orange to-dark-orange text-white px-10 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-300 inline-block">
+                Contact Us Today
+            </a>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+{% comment %}
+<!-- COMMENTED OUT: Detailed Rice section - Uncomment if client approves -->
             <!-- Rice Products Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- 1121 Golden Premium Sella Rice -->
@@ -135,7 +366,10 @@
             </div>
         </div>
     </section>
+{% endcomment %}
 
+{% comment %}
+<!-- COMMENTED OUT: Detailed Spices section - Uncomment if client approves -->
     <!-- Spices Section -->
     <section id="spices-products" class="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div class="container mx-auto px-4 lg:px-8">
@@ -206,6 +440,7 @@
     </section>
 
     </section>
+{% endcomment %}
 
 <!-- Custom Animations -->
 <style>
